@@ -1,4 +1,4 @@
-const selesai = document.getElementById('#selesai')
+const selesai = document.getElementById('selesai')
 let now = new Date();
 let hari = String(now.getDate()).padStart(2, '0');
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -24,10 +24,10 @@ if(minggu == 'Mon'){
 }
 
 // Tambah counter Kegiatan
-selesai.onclick = () => {
-    let counters = ['total', 'mingguan', 'harian', 'streak'];
-    counters.forEach(key => {
-        let count = parseInt(localStorage.getItem(key)) || 0;
-        localStorage.setItem(key, (count + 1).toString());
-    });
-}
+    selesai.onclick = () => {
+        let counters = ['total', 'mingguan', 'harian', 'streak'];
+        counters.forEach(key => {
+            let count = parseInt(localStorage.getItem(key)) || 0;
+            localStorage.setItem(key, (count + 1).toString());
+        });
+    }
