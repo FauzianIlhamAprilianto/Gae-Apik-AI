@@ -1,3 +1,4 @@
+const random = document.getElementById('random')
 const GaeApik = [
     {
         id : 1,
@@ -23,10 +24,6 @@ const GaeApik = [
         id: 5,
         Nama :'Berikan pesan positif di sosial media teman/orang lain',
         Manfaat : 'Bagi sebagian orang, memberi komentar positif kepada teman atau orang lain di media sosial mungkin terlihat sepele, tetapi sebenarnya hal ini memiliki dampak besar bagi mereka. Komentar positif dapat membuat seseorang merasa dihargai, dihormati, dan diperhatikan, terutama ketika mereka sedang membutuhkan motivasi atau dorongan semangat. Tindakan sederhana ini mampu meningkatkan kepercayaan diri, memperbaiki suasana hati, dan menciptakan hubungan yang lebih baik di dunia nyata maupun dunia digital. Selain itu, menyebarkan energi positif di media sosial juga membantu menciptakan lingkungan online yang lebih ramah, suportif, dan bebas dari hal-hal negatif.'
-    },
-    {
-        Nama :'Dengarkan guru,teman, atau orang lain berbicara',
-        Manfaat : 'Mendengarkan dengan penuh perhatian membuat orang lain merasa dipahami dan dihargai. Kebiasaan ini membantu menghindari kesalahpahaman, memperkuat komunikasi, dan menciptakan hubungan yang lebih saling percaya. Selain itu, kemampuan mendengarkan dapat meningkatkan empati serta membantu kita lebih bijaksana dalam menanggapi masalah.'
     },
     {
         id: 6,
@@ -72,7 +69,18 @@ const GaeApik = [
         id: 14,
         Nama : 'Tidur di bawah jam 10',
         Manfaat :'Tidur sebelum jam 10 malam membantu tubuh mendapatkan istirahat yang cukup dan berkualitas. Dengan tidur lebih awal, sistem tubuh seperti otak, jantung, dan sistem imun bekerja lebih optimal, sehingga energi dan konsentrasi meningkat keesokan harinya. Kebiasaan ini juga dapat memperbaiki suasana hati, membuat kulit lebih sehat, dan menumbuhkan disiplin diri, sehingga tubuh dan pikiran terasa lebih segar dan siap menghadapi aktivitas sehari-hari.'
+    },
+    {
+        id : 15,
+        Nama :'Dengarkan guru,teman, atau orang lain berbicara',
+        Manfaat : 'Mendengarkan dengan penuh perhatian membuat orang lain merasa dipahami dan dihargai. Kebiasaan ini membantu menghindari kesalahpahaman, memperkuat komunikasi, dan menciptakan hubungan yang lebih saling percaya. Selain itu, kemampuan mendengarkan dapat meningkatkan empati serta membantu kita lebih bijaksana dalam menanggapi masalah.'
     }
 
 ]
 
+function randomGaeApik(){
+    let hasilRandom = GaeApik[Math.floor(Math.random() * GaeApik.length)]
+    console.log(hasilRandom)
+}
+
+random.onclick = randomGaeApik;
