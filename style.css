@@ -1,0 +1,45 @@
+html , body {
+    background: #f8f5f5;
+    height: 100%;
+    margin: 0;
+}
+.container {
+    background: white;
+    height: auto;
+    width: auto;
+    flex-direction: column;
+}
+.jmlh-hari {
+    background-color: #FF6CAB;
+    background-image: linear-gradient( #FEb692 , #EA5455);
+}
+.jmlh-bulan {
+    background-color: #FF6CAB;
+    background-image: linear-gradient( #F761A1 , #8C1BAB);
+}
+.jmlh-total {
+    background-color: #FF6CAB;
+    background-image: linear-gradient( #FCCF31 , #F55555);
+}
+.btn {
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+.box {
+    width: 460px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5%;
+}
+.body {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
