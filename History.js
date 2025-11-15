@@ -1,11 +1,15 @@
-// if(localStorage.getItem('history') == null){
-//     localStorage.setItem('history', "[]")
-// }
+import { hasilRandomId , randomGaeApik} from "./RandomKegiatan.js"
 
-// import { hasilRandomId } from "./RandomKegiatan.js"
+const skip = document.getElementById('skip')
 
-// selesaiHistory.onclick = () => {
-//     let history = JSON.parse(localStorage.getItem('history'))
-//     history.push(hasilRandomId)
-//     localStorage.setItem('history' ,JSON.stringify(history))
-// }
+// Tambah Histrory skip
+if(localStorage.getItem('historySkip') == null){
+    localStorage.setItem('historySkip', "[]")
+}
+skip.onclick = () => {
+    let historySkip = JSON.parse(localStorage.getItem('historySkip'))
+    historySkip.push(hasilRandomId)
+    localStorage.setItem('historySkip', JSON.stringify(historySkip))
+    randomGaeApik()
+}
+

@@ -80,7 +80,7 @@ const GaeApik = [
 
 ]
 
-function randomGaeApik(){
+export function randomGaeApik(){
     let hasilRandom = GaeApik[Math.floor(Math.random() * GaeApik.length)]
     console.log(hasilRandom)
     hasilRandomId = hasilRandom.id
