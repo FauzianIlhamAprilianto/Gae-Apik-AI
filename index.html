@@ -24,17 +24,24 @@
             width: auto;
             flex-direction: column;
         }
+        .streak {
+            border: 1px solid #EA5455;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
         .jmlh-hari {
             background-color: #FF6CAB;
-            background-image: linear-gradient( #FEb692 , #EA5455);
+            background-image: linear-gradient( to bottom right , #FFA62E , #EA4D2C);
         }
         .jmlh-bulan {
             background-color: #FF6CAB;
-            background-image: linear-gradient( #F761A1 , #8C1BAB);
+            background-image: linear-gradient( to bottom right , #F761A1 , #8C1BAB);
         }
         .jmlh-total {
             background-color: #FF6CAB;
-            background-image: linear-gradient( #FCCF31 , #F55555);
+            background-image: linear-gradient( to bottom right , #38EF7D , #11998E);
         }
         .btn {
             height: 140px;
@@ -62,8 +69,8 @@
 </head>
 <body>
     <div class="container mt-3 rounded shadow">
-        <div class="row justify-content-center align-items-center p-3 rounded gap-5">
-            <div class="streak col-2 text-center rounded p-2">
+        <div class="row justify-content-center align-items-center p-3 rounded gap-3">
+            <div class="streak col-2 rounded p-2 gap-1">
                 <i class="fa-solid fa-fire text-danger fs-3"></i>
                 <p class="m-0 text-danger"><b>100</b></p>
             </div>
@@ -75,7 +82,7 @@
 
             <div class="jmlh-bulan col-2 text-center rounded p-2">
                 <p class="m-0 mt-1 text-light"><b>100</b></p>
-                <p class="text-light mt-0">Kebecikan Wulan iki</p>
+                <p class="text-light mt-0">Kebecikan Minggu iki</p>
             </div>
 
             <div class="jmlh-total col-2 text-center rounded p-2">
@@ -88,7 +95,7 @@
     <div class="body mt-4 text-center">
         <div class="box bg-light m-3 p-3 shadow-sm">
             <h1 class="header m-2 p-2">Gae Apik</h1>
-            <button id="random" class="btn btn-outline-primary m-2 p-2" data-toggle="modal" data-target="#modal-default">Ayo Gas</button>
+            <button id="random" class="btn btn-outline-primary m-2 p-2">Ayo Gas</button>
             <p class="paragraf mt-3">Nglakoni tumindak becik soko tumindak cilik</p>
         </div>
     </div>
