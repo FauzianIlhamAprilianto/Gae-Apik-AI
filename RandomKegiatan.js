@@ -1,3 +1,5 @@
+export let hasilRandomId = null;
+
 const random = document.getElementById('random')
 const GaeApik = [
     {
@@ -81,6 +83,9 @@ const GaeApik = [
 function randomGaeApik(){
     let hasilRandom = GaeApik[Math.floor(Math.random() * GaeApik.length)]
     console.log(hasilRandom)
+    hasilRandomId = hasilRandom.id
 }
 
-random.onclick = randomGaeApik;
+random.onclick = randomGaeApik
+
+

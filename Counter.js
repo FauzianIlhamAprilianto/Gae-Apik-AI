@@ -5,6 +5,7 @@ const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 let minggu = days[now.getDay()];
 let lastReset = localStorage.getItem("lastReset");
 //localStorage.clear();
+import { hasilRandomId } from "./RandomKegiatan.js"
 
 // Tambah counter Kegiatan
 selesai.onclick = () => {
@@ -28,6 +29,13 @@ selesai.onclick = () => {
         localStorage.setItem('streakHariIni', 1)
         localStorage.setItem('terakhir', hari)
     }
+    // Tambah History
+    if(localStorage.getItem('history') == null){
+        localStorage.setItem('history', "[]")
+    }
+    let history = JSON.parse(localStorage.getItem('history'))
+    history.push(hasilRandomId)
+    localStorage.setItem('history' ,JSON.stringify(history))
 }
 
 
