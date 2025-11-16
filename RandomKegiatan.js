@@ -84,8 +84,8 @@ export function randomGaeApik(){
     let hasilRandom = GaeApik[Math.floor(Math.random() * GaeApik.length)]
     console.log(hasilRandom)
     hasilRandomId = hasilRandom.id
+    $('#kebecikan').text(hasilRandom.Nama);
+    $('#manfaat').text(hasilRandom.Manfaat)
 }
 
 random.onclick = randomGaeApik
-
-
