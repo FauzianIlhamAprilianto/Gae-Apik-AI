@@ -1,7 +1,7 @@
 export let hasilRandomId = null;
 
 const random = document.getElementById('random')
-const GaeApik = [
+export const GaeApik = [
     {
         id : 1,
         Nama : 'Ambil dan buang sampah yang ada didekatmu',

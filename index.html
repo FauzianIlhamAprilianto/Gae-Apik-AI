@@ -23,6 +23,7 @@
             background: #f8f5f5;
             height: 100%;
             margin: 0;
+            overflow: hidden;
         }
         h1 , h5 , .jawa{
             font-family: 'Jawa Palsu', serif;
@@ -139,6 +140,24 @@
             align-items: center;
             justify-content: center;
         }
+        
+        #myTabs .nav-item:nth-child(1) .nav-link.active {
+        background-color: #0d6efd;
+        color: white;
+        }
+        #myTabs .nav-item:nth-child(2) .nav-link.active {
+        background-color: #dc3545;
+        color: white;
+        }
+        .manfaat{
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;    
+            text-overflow: ellipsis; 
+            line-height: 1.4;
+        }
      </style>
 </head>
 <body>
@@ -198,8 +217,8 @@
         </div>
 
         <div class="modal-footer">
-            <button id="skip" type="button" class="btn btn-danger me-auto" tabindex="-1">Skip</button>
-            <button id="kerjakan" type="button" class="btn btn-primary">Kerjakan</button>
+            <button id="skip" type="button" class="btn btn-danger me-auto" tabindex="-1">Lewati</button>
+            <button id="selesai" type="button" class="btn btn-primary">Kerjakan</button>
         </div>
 
         </div>
@@ -208,15 +227,30 @@
 
     <!-- Modal History -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">History</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">History</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="justify-content-center align-items-center">
+                    <ul class="nav nav-pills justify-content-center bg-light p-2 rounded-3" id="myTabs">
+                    <li class="nav-item">
+                        <button id="Wesmari" class="nav-link active">Wes mari (0)</button>
+                    </li>
+                    <li class="nav-item">
+                        <button id="Dilewati" class="nav-link">Dilewati (0)</button>
+                    </li>
+                    </ul>
+                </div>
+                <div class="modal-body">
+                    <div class="card border-0 border-start border-3 border-primary mb-2" style="width: 100%;">
+                        <div id="lihatHistory" class="card-body">
+                            <h6 class="card-title">Nama</h6>
+                            <p class="manfaat card-text fs-6">Manfaat</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -224,6 +258,15 @@
 
     <!-- Bootstrap 5 JS bundle (Popper termasuk) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const navLinks = document.querySelectorAll('#myTabs .nav-link');
+        navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+        });
+        });
+    </script>
     <script type="module" src="Counter.js"></script>
     <script type="module" src="RandomKegiatan.js"></script>
     <script type="module" src="History.js"></script>

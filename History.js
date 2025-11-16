@@ -1,4 +1,4 @@
-import { hasilRandomId , randomGaeApik} from "./RandomKegiatan.js"
+import { hasilRandomId , randomGaeApik , GaeApik} from "./RandomKegiatan.js"
 
 const skip = document.getElementById('skip')
 
@@ -13,3 +13,6 @@ skip.onclick = () => {
     randomGaeApik()
 }
 
+JSON.parse(localStorage.getItem('history')).forEach(e => {
+    $('#lihatHitory').HTML('<h6 class="card-title">Nama</h6><p class="manfaat card-text fs-6">Manfaat</p>')
+});
