@@ -19,23 +19,34 @@
     <!-- in -->
      <style>
         html , body {
-            overflow: hidden;
             background: #f8f5f5;
             height: 100%;
             margin: 0;
         }
-        h1 {
-            font-family: 'Noto Sans Javanese', serif;
-            }
-        p ,  h4{
-            font-family: serif;
-            font-weight: 700;
+        .header {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
         }
-        .container {
+        .history {
+            width: 8.2vh;
+            height: 8.2vh;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .wrapper {
             background: white;
             height: auto;
-            width: auto;
-            flex-direction: column;
+            width: 75%;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+        }
+        .card {
+            width: 20%;
         }
         .streak {
             border: 1px solid #EA5455;
@@ -56,11 +67,54 @@
             background-color: #FF6CAB;
             background-image: linear-gradient( to bottom right , #38EF7D , #11998E);
         }
-        .btn {
-            height: 130px;
-            width: 130px;
+        .btn-lingkaran {
+            height: 125px;
+            width: 125px;
             border-radius: 50%;
             transition: 0.4s;
+        }
+        .box {
+            width: 460px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5%;
+        }
+        .body {
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* tampilan di tab */ 
+
+        @media (min-width: 577px) and (max-width: 991px) {
+            .wrapper {
+                width: 70%;
+            }
+            .wrapper .container {
+                display: grid;
+                grid-auto-flow: column;
+                grid-auto-columns: calc(( 60% / 3 ) -35px );
+                overflow: hidden;
+            }
+            .card {
+                width: auto;
+            }
+            .history {
+                height: 6vh;
+                width: 6vh;
+            }
+        }
+
+        /* tampilan hp */
+
+        @media (min-width: 576px) {
+            
         }
         /* .box {
             width: 460px;
@@ -82,34 +136,41 @@
 </head>
 <body>
     
-    <div class="container mt-3 rounded shadow">
-        <div class="row justify-content-center align-items-center p-3 rounded gap-3">
-            <div class="streak col-2 rounded p-4 gap-1">
-                <i class="fa-solid fa-fire text-danger fs-3"></i>
-                <p class="m-0 text-danger"><b>100</b></p>
-            </div>
+    <div class="header row gap-2">
+        <div class="wrapper col-8 mt-3 m-0 rounded shadow">
+            <div class=" container justify-content-center align-items-center p-3 rounded gap-4">
+                <div class="card streak rounded p-4 gap-1">
+                    <i class="fa-solid fa-fire text-danger fs-3"></i>
+                    <p class="m-0 text-danger"><b>100</b></p>
+                </div>
 
-            <div class="jmlh-hari col-2 text-center rounded p-2">
-                <p class="m-0 mt-1 text-light"><b>100</b></p>
-                <p class="text-light mt-0">Kebecikan Dino iki</p>
-            </div>
+                <div class="card jmlh-hari text-center rounded p-2">
+                    <p class="m-0 mt-1 text-light"><b>100</b></p>
+                    <p class="text-light mt-0">Kebecikan Dino iki</p>
+                </div>
 
-            <div class="jmlh-bulan col-2 text-center rounded p-2">
-                <p class="m-0 mt-1 text-light"><b>100</b></p>
-                <p class="text-light mt-0">Kebecikan Minggu iki</p>
-            </div>
+                <div class="card jmlh-bulan text-center rounded p-2">
+                    <p class="m-0 mt-1 text-light"><b>100</b></p>
+                    <p class="text-light mt-0">Kebecikan Wulan iki</p>
+                </div>
 
-            <div class="jmlh-total col-2 text-center rounded p-2">
-                <p class="m-0 mt-1 text-light"><b>100</b></p>
-                <p class="text-light mt-0">Total Kebecikan</p>
+                <div class="card jmlh-total text-center rounded p-2">
+                    <p class="m-0 mt-1 text-light"><b>100</b></p>
+                    <p class="text-light mt-0">Total Kebecikan</p>
+                </div>
             </div>
+        </div>
+        <div class="history col-2 mt-3 shadow p-3 rounded">
+            <a href="#" type="button" class="btn p-0" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+            </a>
         </div>
     </div>
 
     <div class="body mt-4 text-center">
         <div class="m-3 p-3">
             <h1 class="header m-2 p-2">Gae Apik</h1>
-            <button id="random" class="btn btn-outline-primary m-2 p-2" data-bs-toggle="modal" data-bs-target="#myModal">Ayo Gas</button>
+            <button id="random" class="btn btn-lingkaran btn-outline-primary m-2 p-2" data-bs-toggle="modal" data-bs-target="#myModal">Ayo Gas</button>
             <p class="paragraf mt-3">Nglakoni tumindak becik soko tumindak cilik</p>
         </div>
     </div>
@@ -136,6 +197,21 @@
 
         </div>
     </div>
+    </div>
+
+    <!-- Modal History -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">History</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            </div>
+        </div>
     </div>
 
 
