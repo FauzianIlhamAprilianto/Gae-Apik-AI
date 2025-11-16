@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Jawa Palsu';
+    src: url('JawaPalsu.woff2') format('woff2'),
+        url('JawaPalsu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
