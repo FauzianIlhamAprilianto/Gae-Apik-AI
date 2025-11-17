@@ -1,4 +1,4 @@
-import { hasilRandomId , randomGaeApik , GaeApik} from "/js/RandomKebecikan.js"
+import { hasilRandomId , randomGaeApik , GaeApik} from "./RandomKebecikan.js"
 
 const skip = document.getElementById('skip')
 const historywesmari = document.getElementById('HistoryWesWari')
