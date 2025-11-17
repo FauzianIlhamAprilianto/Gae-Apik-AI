@@ -5,6 +5,11 @@
 /* ---------------------------------------------------
    NAVBAR HOVER EFFECT
 --------------------------------------------------- */
+/* Navbar */
+.navbar-expand-lg {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+}
 
 /* Navbar transition */
 #mainNavbar {
@@ -37,7 +42,7 @@
 }
 
 .history-link:hover {
-    color: #0d6efd;
+    color: #CD2C58;
     transform: translateY(-3px);
     opacity: 0.8;
 }
@@ -47,6 +52,10 @@
 --------------------------------------------------- */
 #heroCarousel {
     position: relative;
+}
+
+.carousel-fade {
+    margin-top: 9.4vh;
 }
 
 .hero-img {
@@ -100,7 +109,7 @@
 /* Icon */
 .circle-icon {
     font-size: 60px;
-    color: #0d6efd;
+    color: #CD2C58;
 }
 
 /* ---------------------------------------------------
@@ -124,14 +133,14 @@
 /* Icon besar kiri */
 .stats-icon {
     font-size: 45px;
-    color: #0d6efd;
+    color: #CD2C58;
 }
 
 /* Angka besar */
 .stats-number {
     font-size: 32px;
     font-weight: 700;
-    color: #0d6efd;
+    color: #CD2C58;
     margin-top: -5px;
 }
 
@@ -151,7 +160,7 @@
     bottom: 25px;
     right: 25px;
 
-    background: #0d6efd;
+    background: #CD2C58;
     color: #fff;
 
     padding: 18px 28px;
@@ -200,7 +209,7 @@
 .history-btn {
     display: inline-block;
     padding: 8px 20px;
-    background-color: #0d6efd;
+    background-color: #CD2C58;
     color: #fff !important;
     font-weight: 500;
     border-radius: 50px; /* membulat kanan kiri */
@@ -209,7 +218,7 @@
 }
 
 .history-btn:hover {
-    background-color: #0b5ed7;
+    background-color: #CD2C58;
     transform: translateY(-2px);
     opacity: 0.9;
 }
@@ -243,9 +252,9 @@
 
 .tab-btn.active,
 .tab-btn:hover {
-    background-color: #0d6efd;
+    background-color: #CD2C58;
     color: #fff;
-    border-color: #0d6efd;
+    border-color: #CD2C58;
 }
 
 /* Center tab buttons */
