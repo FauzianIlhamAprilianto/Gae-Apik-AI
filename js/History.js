@@ -26,7 +26,7 @@ if(localStorage.getItem('history')){
         $("#hasil").empty();
         JSON.parse(localStorage.getItem('history')).forEach(e => {
             $("#hasil").append(`
-                <div class="col-md-6 history-card done">
+                <div class="card border-0 border-start border-3 border-primary col-md-6 history-card done">
                     <div class="status-strip bg-success"></div>
                     <div class="history-content">
                         <h5 class="mb-1">${GaeApik[e].title}</h5>
@@ -41,7 +41,7 @@ if(localStorage.getItem('history')){
         $("#hasil").empty();
         JSON.parse(localStorage.getItem('historySkip')).forEach(e => {
         $("#hasil").append(`
-            <div class="col-md-6 history-card done">
+            <div class="card border-0 border-start border-3 border-danger col-md-6 history-card skip">
                 <div class="status-strip bg-success"></div>
                 <div class="history-content">
                     <h5 class="mb-1">${GaeApik[e].title}</h5>
@@ -64,8 +64,8 @@ else{
     $("#hasil").empty();
     $("#hasil").append(`
         <p id="emptyMessage" class="text-center text-muted mt-5">
-            No entries yet <br>
-            Start spinning to create your kindness journey!
+            Durung ana isiné<br>
+            Wiwièn ngéspin kanggo miwiti lelampahan kebaikanmu!
         </p>
     `)  
 }
@@ -76,7 +76,7 @@ if((JSON.parse(localStorage.getItem('historySkip'))).length > 0){
             $("#hasil").empty();
             JSON.parse(localStorage.getItem('historySkip')).forEach(e => {
             $("#hasil").append(`
-                <div class="col-md-6 history-card done">
+                <div class="card border-0 border-start border-3 border-danger col-md-6 history-card skip">
                     <div class="status-strip bg-success"></div>
                     <div class="history-content">
                         <h5 class="mb-1">${GaeApik[e].title}</h5>
@@ -95,8 +95,8 @@ else{
     $("#hasil").empty();
     $("#hasil").append(`
         <p id="emptyMessage" class="text-center text-muted mt-5">
-            No entries yet <br>
-            Start spinning to create your kindness journey!
+            Durung ana isiné<br>
+            Wiwièn ngéspin kanggo miwiti lelampahan kebaikanmu!
         </p>
     `)         
 }

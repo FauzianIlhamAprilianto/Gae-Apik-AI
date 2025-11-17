@@ -65,3 +65,25 @@ if(minggu == 'Mon'){
 if(hari >= parseInt(localStorage.getItem('terakhir')) + 2 ){
     localStorage.setItem('streak', 0)
 }
+
+// Tampilkan ke UI
+if(localStorage.getItem('bestStreak') > 0){
+    $('.streaknumber').text(localStorage.getItem('bestStreak'))
+} else{
+    
+}
+if(localStorage.getItem('harian') > 0){
+    $('.streaknumber').text(localStorage.getItem('harian'))
+} else{
+    
+}
+if(localStorage.getItem('mingguan') > 0){
+    $('.streaknumber').text(localStorage.getItem('mingguan'))
+} else{
+    
+}
+if(localStorage.getItem('total') > 0){
+    $('.streaknumber').text(localStorage.getItem('total'))
+} else{
+    
+}
