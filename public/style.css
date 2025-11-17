@@ -1,0 +1,310 @@
+/* ---------------------------------------------------
+   HALAMAN INDEX
+--------------------------------------------------- */
+
+/* ---------------------------------------------------
+   NAVBAR HOVER EFFECT
+--------------------------------------------------- */
+/* Navbar transition */
+#mainNavbar {
+    transition: backdrop-filter 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Blur aktif saat scroll */
+#mainNavbar.scrolled {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.brand-hover, 
+.history-link {
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
+}
+
+.brand-hover:hover {
+    transform: translateY(-3px);
+    opacity: 0.8;
+}
+
+.history-link {
+    color: #333;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.history-link:hover {
+    color: #0d6efd;
+    transform: translateY(-3px);
+    opacity: 0.8;
+}
+
+/* ---------------------------------------------------
+   HERO IMAGE
+--------------------------------------------------- */
+#heroCarousel {
+    position: relative;
+}
+
+.hero-img {
+    height: 85vh;
+    object-fit: cover;
+    transition: transform 1.2s ease, opacity 1.2s ease;
+}
+
+/* Saat slide masuk */
+.carousel-item-next .slide-img,
+.carousel-item-prev .slide-img {
+    transform: translateX(50px); /* geser masuk dari kanan */
+    opacity: 0.6;
+}
+
+.carousel-item.active .slide-img {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* ---------------------------------------------------
+   CIRCLE CARD — LEBIH BESAR
+--------------------------------------------------- */
+.circle-card {
+    width: 330px;
+    height: 330px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(7px);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    transition: all 0.35s ease;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+    z-index: 10; /* pastikan muncul di atas gambar */
+}
+
+.circle-card:hover {
+    transform: translate(-50%, -50%) scale(1.12);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    opacity: 0.96;
+}
+
+/* Icon */
+.circle-icon {
+    font-size: 60px;
+    color: #0d6efd;
+}
+
+/* ---------------------------------------------------
+   CARD HORIZONTAL (STATISTICS STYLE)
+--------------------------------------------------- */
+.stats-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 25px 35px;
+    min-height: 120px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+    transition: all .3s ease;
+}
+
+/* Hover sedikit naik */
+.stats-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.18);
+}
+
+/* Icon besar kiri */
+.stats-icon {
+    font-size: 45px;
+    color: #0d6efd;
+}
+
+/* Angka besar */
+.stats-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0d6efd;
+    margin-top: -5px;
+}
+
+/* Deskripsi kanan */
+.stats-desc {
+    width: 45%;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* ---------------------------------------------------
+   FLOATING CIRCLE BUTTON (CHECK POINT)
+--------------------------------------------------- */
+.floating-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    background: #0d6efd;
+    color: #fff;
+
+    padding: 18px 28px;
+    border-radius: 50px; /* oval bulat */
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    transition: all .3s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: floatPulse 2.2s infinite ease-in-out;
+    z-index: 999;
+}
+
+/* Hover effect */
+.floating-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.30);
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Animasi pulse lembut */
+@keyframes floatPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.07);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ---------------------------------------------------
+   HALAMAN HISTORY
+--------------------------------------------------- */
+
+/* History button dengan background dan membulat */
+.history-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #0d6efd;
+    color: #fff !important;
+    font-weight: 500;
+    border-radius: 50px; /* membulat kanan kiri */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.history-btn:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* Tombol back panah kiri */
+.container .btn-light {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 50px;
+    padding: 6px 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.container .btn-light:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Tab Buttons */
+.tab-btn {
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background-color: #0d6efd;
+    color: #fff;
+    border-color: #0d6efd;
+}
+
+/* Center tab buttons */
+.text-center .tab-btn {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+/* History cards sudah menggunakan row + col-md-6 untuk 2 kolom */
+.history-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.history-card:hover {
+    transform: translateY(-4px);
+}
+
+
+/* Strip kiri */
+.status-strip {
+    width: 6px;
+    height: 100%;
+}
+
+/* Konten utama */
+.history-content {
+    padding: 16px;
+    flex: 1;
+}
+
+/* Status kanan */
+.history-status {
+    padding: 0 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Done & Skip colors */
+.history-card.done .status-strip {
+    background-color: #28a745;
+}
+.history-card.skip .status-strip {
+    background-color: #dc3545;
+}
+
+.history-card.done .history-status {
+    color: #28a745;
+}
+.history-card.skip .history-status {
+    color: #dc3545;
+}
+
+

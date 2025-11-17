@@ -5,7 +5,7 @@ const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 let minggu = days[now.getDay()];
 let lastReset = localStorage.getItem("lastReset");
 //localStorage.clear();
-import { hasilRandomId } from "./RandomKegiatan.js"
+import { hasilRandomId } from "../RandomKegiatan.js"
 
 // Tambah counter Kegiatan
 selesai.onclick = () => {
