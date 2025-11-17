@@ -68,22 +68,22 @@ if(hari >= parseInt(localStorage.getItem('terakhir')) + 2 ){
 
 // Tampilkan ke UI
 if(localStorage.getItem('bestStreak') > 0){
-    $('.streaknumber').text(localStorage.getItem('bestStreak'))
+    $('.streak-number').text(localStorage.getItem('bestStreak'))
 } else{
     
 }
 if(localStorage.getItem('harian') > 0){
-    $('.streaknumber').text(localStorage.getItem('harian'))
+    $('.hari-number').text(localStorage.getItem('harian'))
 } else{
     
 }
 if(localStorage.getItem('mingguan') > 0){
-    $('.streaknumber').text(localStorage.getItem('mingguan'))
+    $('.minggu-number').text(localStorage.getItem('mingguan'))
 } else{
     
 }
 if(localStorage.getItem('total') > 0){
-    $('.streaknumber').text(localStorage.getItem('total'))
+    $('.total-number').text(localStorage.getItem('total'))
 } else{
     
 }
