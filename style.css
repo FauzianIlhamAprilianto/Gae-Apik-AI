@@ -317,4 +317,9 @@
     color: #dc3545;
 }
 
-
+/* mengatur tampilan hp */
+@media (max-width:576px) {
+    .carousel-fade {
+    margin-top: 6.8vh;
+}
+}
