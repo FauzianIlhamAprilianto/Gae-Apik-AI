@@ -116,18 +116,20 @@
    CARD HORIZONTAL (STATISTICS STYLE)
 --------------------------------------------------- */
 .stats-card {
-    background: #ffffff;
+    background-image: linear-gradient(to right , #f4c7d2e8, white , #FCE8ED);
     border-radius: 18px;
     padding: 25px 35px;
     min-height: 120px;
     box-shadow: 0 4px 18px rgba(0,0,0,0.12);
     transition: all .3s ease;
+    background-size: 200% auto;
 }
 
 /* Hover sedikit naik */
 .stats-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 6px 25px rgba(0,0,0,0.18);
+    background-position: right center;
 }
 
 /* Icon besar kiri */
