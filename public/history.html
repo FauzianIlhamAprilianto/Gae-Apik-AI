@@ -167,71 +167,30 @@
         <!-- Tab Buttons -->
         <div class="mb-4 text-center">
             <button class="tab-btn active me-2" data-filter="all">All</button>
-            <button class="tab-btn me-2" data-filter="done">Done</button>
-            <button class="tab-btn" data-filter="skip">Skip</button>
+            <button id="HistoryWesmari" class="tab-btn me-2">Wes mari</button>
+            <button id="HistoryDiliwati" class="tab-btn">Diliwati</button>
         </div>
 
         <!-- History Cards -->
-        <div class="row history-cards g-4">
-
-            <!-- CARD 1 - Done -->
-            <div class="col-md-6 history-card done">
-                <div class="status-strip bg-success"></div>
-                <div class="history-content">
-                    <h5 class="mb-1">Finish Bootstrap Tutorial</h5>
-                    <p class="mb-0 text-muted">Belajar tentang layout dan komponen Bootstrap.</p>
-                </div>
-                <div class="history-status text-success">
-                    <i class="bi bi-check-circle-fill me-1"></i> Done
-                </div>
-            </div>
-
-            <!-- CARD 2 - Skip -->
-            <div class="col-md-6 history-card skip">
-                <div class="status-strip bg-danger"></div>
-                <div class="history-content">
-                    <h5 class="mb-1">Complete React Project</h5>
-                    <p class="mb-0 text-muted">Belum sempat dikerjakan minggu ini.</p>
-                </div>
-                <div class="history-status text-danger">
-                    <i class="bi bi-x-circle-fill me-1"></i> Skip
-                </div>
-            </div>
-
-            <!-- CARD 3 - Done -->
-            <div class="col-md-6 history-card done">
-                <div class="status-strip bg-success"></div>
-                <div class="history-content">
-                    <h5 class="mb-1">Update Portfolio</h5>
-                    <p class="mb-0 text-muted">Menambahkan project baru ke portfolio online.</p>
-                </div>
-                <div class="history-status text-success">
-                    <i class="bi bi-check-circle-fill me-1"></i> Done
-                </div>
-            </div>
-
-            <!-- CARD 4 - Done -->
-            <div class="col-md-6 history-card done">
-                <div class="status-strip bg-success"></div>
-                <div class="history-content">
-                    <h5 class="mb-1">Design Landing Page</h5>
-                    <p class="mb-0 text-muted">Membuat layout awal landing page website.</p>
-                </div>
-                <div class="history-status text-success">
-                    <i class="bi bi-check-circle-fill me-1"></i> Done
-                </div>
-            </div>
-
+        <div id="hasil" class="row history-cards g-4">
+            <p id="emptyMessage" class="text-center text-muted mt-5">
+                No entries yet <br>
+                Start spinning to create your kindness journey!
+            </p>
         </div>
     </div>
 
     <!-- Bootstrap JS -->
-    <script 
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <!-- JS eksternal -->
-    <script src="script.js"></script>
+    <script src="/js/script.js"></script>
+    <script type="module" src="/js/Counter.js"></script>
+    <script type="module" src="/js/RandomKebecikan.js" ></script>
+    <script type="module" src="/js/History.js"></script>
 
 </body>
 </html>

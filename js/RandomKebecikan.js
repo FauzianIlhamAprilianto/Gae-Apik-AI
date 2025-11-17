@@ -62,4 +62,9 @@ export function randomGaeApik(){
     $('#manfaat').text(hasilRandom.benefit)
 }
 
-random.onclick = randomGaeApik
+
+if (random) {
+    random.addEventListener("click", function () {
+        randomGaeApik()
+    });
+}

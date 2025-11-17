@@ -1,6 +1,5 @@
-/* ---------------------------------------------------
-   HALAMAN INDEX
---------------------------------------------------- */
+
+//HALAMAN INDEX
 
 const navbar = document.getElementById('mainNavbar');
 
@@ -12,9 +11,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-/* ---------------------------------------------------
-   HALAMAN HISTORY
---------------------------------------------------- */
+//HALAMAN HISTORY
 
 const tabButtons = document.querySelectorAll('.tab-btn');
 const historyCards = document.querySelectorAll('.history-card');
