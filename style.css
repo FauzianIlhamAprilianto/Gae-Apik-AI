@@ -167,7 +167,7 @@
    CARD HORIZONTAL (STATISTICS STYLE)
 --------------------------------------------------- */
 .stats-card {
-    background-image: linear-gradient(to right , #F5E5CC, white , #F0EAD6);
+    background-image: linear-gradient(to right ,#F5E0E0, white , #FCFCFC);
     border-radius: 18px;
     padding: 25px 35px;
     min-height: 120px;
