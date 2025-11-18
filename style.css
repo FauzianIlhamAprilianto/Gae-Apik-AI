@@ -167,13 +167,17 @@
    CARD HORIZONTAL (STATISTICS STYLE)
 --------------------------------------------------- */
 .stats-card {
-    background-image: linear-gradient(to right , #f4c7d2e8, white , #FCE8ED);
+    background-image: linear-gradient(to right , #F5E5CC, white , #F0EAD6);
     border-radius: 18px;
     padding: 25px 35px;
     min-height: 120px;
     box-shadow: 0 4px 18px rgba(0,0,0,0.12);
     transition: all .3s ease;
     background-size: 200% auto;
+}
+
+.stats-long {
+    background-image: linear-gradient(to right , #D4F1F4, white , #C3EBD8);
 }
 
 /* Hover sedikit naik */
