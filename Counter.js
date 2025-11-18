@@ -8,40 +8,35 @@ let lastReset = localStorage.getItem("lastReset");
 import { hasilRandomId } from "./RandomKebecikan.js"
 
 // Tambah counter Kegiatan
-if (selesai) {
-    selesai.addEventListener("click", function () {
-        () => {
-            let counters = ['total', 'mingguan', 'harian'];
-            counters.forEach(key => {
-                let count = parseInt(localStorage.getItem(key)) || 0;
-                localStorage.setItem(key, (count + 1).toString());
-            });
-            // Tambah Streak
-            if(localStorage.getItem('bestStreak') == null){
-                localStorage.setItem('bestStreak', 0)
-                localStorage.setItem('streak', 0)
-                localStorage.setItem('streakHariIni', 0)
-            }
-            if(localStorage.getItem('streakHariIni') == 0){
-                let countStreak = parseInt(localStorage.getItem('streak') || 0)
-                localStorage.setItem('streak', (countStreak + 1).toString())
-                if(localStorage.getItem('bestStreak') < localStorage.getItem('streak')){
-                    localStorage.setItem('bestStreak', localStorage.getItem('streak'))
-                }
-                localStorage.setItem('streakHariIni', 1)
-                localStorage.setItem('terakhir', hari)
-            }
-            // Tambah History
-            if(localStorage.getItem('history') == null){
-                localStorage.setItem('history', "[]")
-            }
-            let history = JSON.parse(localStorage.getItem('history'))
-            history.push(hasilRandomId)
-            localStorage.setItem('history' ,JSON.stringify(history))
-        }
+export function Counter(){
+    let counters = ['total', 'mingguan', 'harian'];
+    counters.forEach(key => {
+        let count = parseInt(localStorage.getItem(key)) || 0;
+        localStorage.setItem(key, (count + 1).toString());
     });
+    // Tambah Streak
+    if(localStorage.getItem('bestStreak') == null){
+        localStorage.setItem('bestStreak', 0)
+        localStorage.setItem('streak', 0)
+        localStorage.setItem('streakHariIni', 0)
+    }
+    if(localStorage.getItem('streakHariIni') == 0){
+        let countStreak = parseInt(localStorage.getItem('streak') || 0)
+        localStorage.setItem('streak', (countStreak + 1).toString())
+        if(localStorage.getItem('bestStreak') < localStorage.getItem('streak')){
+            localStorage.setItem('bestStreak', localStorage.getItem('streak'))
+        }
+        localStorage.setItem('streakHariIni', 1)
+        localStorage.setItem('terakhir', hari)
+    }
+    // Tambah History
+    if(localStorage.getItem('history') == null){
+        localStorage.setItem('history', "[]")
+    }
+    let history = JSON.parse(localStorage.getItem('history'))
+    history.push(hasilRandomId)
+    localStorage.setItem('history' ,JSON.stringify(history))
 }
-
 
 // Reset harian
 if(localStorage.getItem('resetHarian') == null){
@@ -67,23 +62,19 @@ if(hari >= parseInt(localStorage.getItem('terakhir')) + 2 ){
 }
 
 // Tampilkan ke UI
-if(localStorage.getItem('bestStreak') > 0){
+export function Score(){
+    if(localStorage.getItem('bestStreak') > 0){
     $('.streak-number').text(localStorage.getItem('bestStreak'))
-} else{
-    
-}
-if(localStorage.getItem('harian') > 0){
-    $('.hari-number').text(localStorage.getItem('harian'))
-} else{
-    
-}
-if(localStorage.getItem('mingguan') > 0){
-    $('.minggu-number').text(localStorage.getItem('mingguan'))
-} else{
-    
-}
-if(localStorage.getItem('total') > 0){
-    $('.total-number').text(localStorage.getItem('total'))
-} else{
-    
-}
+    }
+    if(localStorage.getItem('harian') > 0){
+        $('.hari-number').text(localStorage.getItem('harian'))
+    }
+    if(localStorage.getItem('mingguan') > 0){
+        $('.minggu-number').text(localStorage.getItem('mingguan'))
+    }
+    if(localStorage.getItem('total') > 0){
+        $('.total-number').text(localStorage.getItem('total'))
+    }
+} 
+
+Score()

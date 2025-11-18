@@ -1,6 +1,11 @@
+import { Counter , Score } from './Counter.js'
 export let hasilRandomId = null;
 
 const random = document.getElementById('random')
+const kerjakan = document.getElementById('kerjakan')
+const skip = document.getElementById('skip')
+const lanjutkan = document.getElementById('lanjutkan')
+
 export const GaeApik = [
     { id: 1, title: "Bangun pagi ojo kesiangan", description: "Nggawe awake seger lan pikiran seger", how: "Pasang alarm 30 menit luwih awal", benefit: "Bisa ngerjakke urusan esuk luwih tenang", status: false },
     { id: 2, title: "Ngombe banyu putih 2 gelas", description: "Awak perlu hidrasi sawise turu", how: "Siapke gelas banyu nang meja", benefit: "Metabolisme lancar lan awak seger", status: false },
@@ -56,15 +61,92 @@ export const GaeApik = [
 
 export function randomGaeApik(){
     let hasilRandom = GaeApik[Math.floor(Math.random() * GaeApik.length)]
-    console.log(hasilRandom)
     hasilRandomId = hasilRandom.id
-    $('#kebecikan').text(hasilRandom.title);
-    $('#manfaat').text(hasilRandom.benefit)
+    $('#title-show').text(hasilRandom.title);
+    $('#desc-show').text(hasilRandom.description);
+    //Modal
+    $('#titleModal').text(hasilRandom.title);
+    $('#descModal').text(hasilRandom.description);
+    $('#caraModal').text(hasilRandom.how);
+    $('#manfaatModal').text(hasilRandom.benefit);
 }
-
 
 if (random) {
     random.addEventListener("click", function () {
-        randomGaeApik()
+        // Jika sudah expanded → jangan lakukan apa-apa
+        if (this.classList.contains("expanded")) {
+            return;
+        }
+
+        // Jika belum expanded → jalankan aksi
+        randomGaeApik();
+        this.classList.add("expanded");
     });
+}
+
+if(kerjakan){
+    kerjakan.addEventListener("click", function () {
+        $('#infoModal').modal('show')
+    });
+}
+
+if(lanjutkan){
+    lanjutkan.addEventListener("click", function () {
+        Counter()
+        Score()
+        // Confetti
+        createFirework();
+
+        // Toast
+        $("#happyToast").addClass("show");
+        setTimeout(() => {
+            $("#happyToast").removeClass("show");
+        }, 4000);
+
+        $('#infoModal').modal('hide')
+        random.classList.remove("expanded");
+
+        $('#title-show').text('Ayo Gass');
+        $('#desc-show').text('Ngelakoni Kebecikan Teko Tumindak Cilik');
+    });
+}
+
+function createFirework(count = 200) {
+    const container = $("#fireworkContainer");
+    container.empty();
+
+    const colors = ["#FFD700","#FF4500","#FF69B4","#4CAF50","#3D8BFD","#FF6B6B","#FFB400","#CD2C58"];
+
+    // Titik ledakan di tengah layar
+    const xOrigin = window.innerWidth / 2;
+    const yOrigin = window.innerHeight / 2;
+
+    for (let i = 0; i < count; i++) {
+        const particle = $("<div class='firework'></div>");
+        const size = Math.random() * 8 + 4; // 4px - 12px
+        particle.css({
+            width: size+'px',
+            height: size+'px',
+            background: colors[Math.floor(Math.random()*colors.length)],
+            borderRadius: '50%'
+        });
+
+        const angle = Math.random() * 2 * Math.PI; // 0-360°
+        const radius = Math.random() * 300 + 100; // jarak ledakan 100-400px
+        const x = Math.cos(angle) * radius;
+        const y = Math.sin(angle) * radius;
+
+        particle.css('--x', x+'px');
+        particle.css('--y', y+'px');
+        particle.css({
+            left: xOrigin + 'px',
+            top: yOrigin + 'px',
+            animation: `firework-explode ${Math.random()*1+1.5}s ease-out forwards`,
+            animationDelay: Math.random() * 0.3 + 's'
+        });
+
+        container.append(particle);
+    }
+
+    setTimeout(() => container.empty(), 2500);
 }
