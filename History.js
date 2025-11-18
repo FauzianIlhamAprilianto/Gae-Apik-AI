@@ -28,8 +28,8 @@ function all() {
             <div class="card border-0 border-start border-3 border-primary col-md-6 history-card done">
                 <div class="status-strip bg-success"></div>
                 <div class="history-content">
-                    <h5 class="mb-1">${GaeApik[e].title}</h5>
-                    <p class="mb-0 text-muted">${GaeApik[e].benefit}</p>
+                    <h5 class="mb-1">${GaeApik[e-1].title}</h5>
+                    <p class="mb-0 text-muted">${GaeApik[e-1].benefit}</p>
                 </div>
                 <div class="history-status text-success">
                     <i class="bi bi-check-circle-fill me-1"></i> Done
@@ -42,8 +42,8 @@ function all() {
         <div class="card border-0 border-start border-3 border-danger col-md-6 history-card skip">
             <div class="status-strip bg-success"></div>
             <div class="history-content">
-                <h5 class="mb-1">${GaeApik[e].title}</h5>
-                <p class="mb-0 text-muted">${GaeApik[e].benefit}</p>
+                <h5 class="mb-1">${GaeApik[e-1].title}</h5>
+                <p class="mb-0 text-muted">${GaeApik[e-1].benefit}</p>
             </div>
             <div class="history-status text-danger">
                 <i class="bi bi-x-circle-fill me-1"></i> Skip
@@ -83,8 +83,8 @@ if(historyJSON.length > 0){
                 <div class="card border-0 border-start border-3 border-primary col-md-6 history-card done">
                     <div class="status-strip bg-success"></div>
                     <div class="history-content">
-                        <h5 class="mb-1">${GaeApik[e].title}</h5>
-                        <p class="mb-0 text-muted">${GaeApik[e].benefit}</p>
+                        <h5 class="mb-1">${GaeApik[e-1].title}</h5>
+                        <p class="mb-0 text-muted">${GaeApik[e-1].benefit}</p>
                     </div>
                     <div class="history-status text-success">
                         <i class="bi bi-check-circle-fill me-1"></i> Done
@@ -116,8 +116,8 @@ if(historySkipJSON.length > 0){
                 <div class="card border-0 border-start border-3 border-danger col-md-6 history-card skip">
                     <div class="status-strip bg-success"></div>
                     <div class="history-content">
-                        <h5 class="mb-1">${GaeApik[e].title}</h5>
-                        <p class="mb-0 text-muted">${GaeApik[e].benefit}</p>
+                        <h5 class="mb-1">${GaeApik[e-1].title}</h5>
+                        <p class="mb-0 text-muted">${GaeApik[e-1].benefit}</p>
                     </div>
                     <div class="history-status text-danger">
                         <i class="bi bi-x-circle-fill me-1"></i> Skip
