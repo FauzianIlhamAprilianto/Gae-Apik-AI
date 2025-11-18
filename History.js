@@ -53,7 +53,9 @@ function all() {
     })
 };
 
-if((JSON.parse(localStorage.getItem('history'))).length > 0 || (JSON.parse(localStorage.getItem('historySkip'))).length > 0){
+const historyJSON = JSON.parse(localStorage.getItem('history') ?? '[]');
+const historySkipJSON = JSON.parse(localStorage.getItem('historySkip') ?? '[]');
+if(historyJSON.length > 0 || historySkipJSON.length > 0){
     all()
     if(historyAll){
         historyAll.onclick = () =>{
@@ -72,7 +74,7 @@ else{
 }
 
 //History Wes Mari
-if((JSON.parse(localStorage.getItem('history'))).length > 0){
+if(historyJSON.length > 0){
     if(historywesmari){
         historywesmari.onclick = () => {
             $("#hasil").empty();
@@ -105,7 +107,7 @@ else{
 
 
 // History Skip
-if((JSON.parse(localStorage.getItem('historySkip'))).length > 0){
+if(historySkipJSON.length > 0){
     if(historydiliwati){
         historydiliwati.onclick = () => {
             $("#hasil").empty();

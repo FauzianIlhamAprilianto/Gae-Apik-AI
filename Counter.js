@@ -33,9 +33,15 @@ export function Counter(){
     if(localStorage.getItem('history') == null){
         localStorage.setItem('history', "[]")
     }
+    if(localStorage.getItem('historyHarian') == null){
+        localStorage.setItem('historyHarian', "[]")
+    }
     let history = JSON.parse(localStorage.getItem('history'))
+    let historyHarian = JSON.parse(localStorage.getItem('historyHarian'))
     history.push(hasilRandomId)
+    historyHarian.push(hasilRandomId)
     localStorage.setItem('history' ,JSON.stringify(history))
+    localStorage.setItem('historyHarian' ,JSON.stringify(historyHarian))
 }
 
 // Reset harian

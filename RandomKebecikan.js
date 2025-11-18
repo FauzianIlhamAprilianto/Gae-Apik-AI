@@ -359,16 +359,51 @@ export const GaeApik = [
     }
 ];
 
-export function randomGaeApik(){
-    let hasilRandom = GaeApik[Math.floor(Math.random() * GaeApik.length)]
-    hasilRandomId = hasilRandom.id
-    $('#title-show').text(hasilRandom.title);
-    $('#desc-show').text(hasilRandom.description);
-    //Modal
-    $('#titleModal').text(hasilRandom.title);
-    $('#descModal').text(hasilRandom.description);
-    $('#caraModal').text(hasilRandom.how);
-    $('#manfaatModal').text(hasilRandom.benefit);
+// export function randomGaeApik(){
+//     let hasilRandom = GaeApik[Math.floor(Math.random() * GaeApik.length)]
+//     hasilRandomId = hasilRandom.id
+//     $('#title-show').text(hasilRandom.title);
+//     $('#desc-show').text(hasilRandom.description);
+//     //Modal
+//     $('#titleModal').text(hasilRandom.title);
+//     $('#descModal').text(hasilRandom.description);
+//     $('#caraModal').text(hasilRandom.how);
+//     $('#manfaatModal').text(hasilRandom.benefit);
+// }
+
+export function randomGaeApik() {
+    // 1. Ambil/Inisialisasi riwayat indeks yang sudah terpakai
+    const historyJSON = localStorage.getItem('historyHarian');
+    let usedIndices = historyJSON ? JSON.parse(historyJSON) : [];
+
+    const totalElements = GaeApik.length;
+
+    // Cek apakah semua sudah terambil
+    if (usedIndices.length >= totalElements) {
+        console.warn("Semua item sudah terpilih. Silakan reset riwayat untuk memulai kembali.");
+        return null;
+    }else{
+        // 2. Tentukan indeks yang tersedia
+        // Membuat array semua indeks yang mungkin: [0, 1, 2, ..., 49]
+        const allIndices = Array.from({ length: totalElements }, (_, i) => i);
+        
+        // Filter indeks: hanya ambil yang BELUM ada di usedIndices
+        const availableIndices = allIndices.filter(index => !usedIndices.includes(index));
+
+        // 3. Pilih satu indeks acak dari yang tersedia
+        const randomIndexInAvailable = Math.floor(Math.random() * availableIndices.length);
+        const chosenIndex = availableIndices[randomIndexInAvailable];
+
+        let hasilRandom = GaeApik[chosenIndex]
+        hasilRandomId = hasilRandom.id
+
+        $('#title-show').text(hasilRandom.title);
+        $('#desc-show').text(hasilRandom.description);
+        $('#titleModal').text(hasilRandom.title);
+        $('#descModal').text(hasilRandom.description);
+        $('#caraModal').text(hasilRandom.how);
+        $('#manfaatModal').text(hasilRandom.benefit);
+    }
 }
 
 if (random) {
