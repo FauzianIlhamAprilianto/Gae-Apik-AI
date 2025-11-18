@@ -372,23 +372,31 @@ export const GaeApik = [
 // }
 
 export function randomGaeApik() {
-    // 1. Ambil/Inisialisasi riwayat indeks yang sudah terpakai
-    const historyJSON = localStorage.getItem('historyHarian');
-    let usedIndices = historyJSON ? JSON.parse(historyJSON) : [];
+        const totalElements = GaeApik.length;
+        const historyJSON = localStorage.getItem('historyHarian');
+        
+        // Inisialisasi array untuk menampung indeks berbasis 0 yang sudah terpakai
+        let usedIndicesBase0 = [];
+        
+        // Ambil data dari localStorage (berbasis 1)
+        if (historyJSON) {
+            const historyPlusOne = JSON.parse(historyJSON);
+            // Konversi semua nilai berbasis 1 menjadi indeks berbasis 0
+            usedIndicesBase0 = historyPlusOne.map(item => item - 1);
+        }
+        
+        // Cek apakah semua sudah terambil
+        if (usedIndicesBase0.length >= totalElements) {
+            console.warn("Semua item sudah terpilih. Silakan reset riwayat untuk memulai kembali.");
+            return null;
+        }
 
-    const totalElements = GaeApik.length;
-
-    // Cek apakah semua sudah terambil
-    if (usedIndices.length >= totalElements) {
-        console.warn("Semua item sudah terpilih. Silakan reset riwayat untuk memulai kembali.");
-        return null;
-    }else{
         // 2. Tentukan indeks yang tersedia
-        // Membuat array semua indeks yang mungkin: [0, 1, 2, ..., 49]
+        // Membuat array semua indeks yang mungkin: [0, 1, 2, ...]
         const allIndices = Array.from({ length: totalElements }, (_, i) => i);
         
-        // Filter indeks: hanya ambil yang BELUM ada di usedIndices
-        const availableIndices = allIndices.filter(index => !usedIndices.includes(index));
+        // Filter indeks: hanya ambil yang BELUM ada di usedIndicesBase0
+        const availableIndices = allIndices.filter(index => !usedIndicesBase0.includes(index));
 
         // 3. Pilih satu indeks acak dari yang tersedia
         const randomIndexInAvailable = Math.floor(Math.random() * availableIndices.length);
@@ -404,7 +412,6 @@ export function randomGaeApik() {
         $('#caraModal').text(hasilRandom.how);
         $('#manfaatModal').text(hasilRandom.benefit);
     }
-}
 
 if (random) {
     random.addEventListener("click", function () {
@@ -412,7 +419,7 @@ if (random) {
         if (this.classList.contains("expanded")) {
             return;
         }
-
+        lanjutkan.disabled = false;
         // Jika belum expanded → jalankan aksi
         randomGaeApik();
         this.classList.add("expanded");
@@ -427,20 +434,18 @@ if(kerjakan){
 
 if(lanjutkan){
     lanjutkan.addEventListener("click", function () {
+        this.disabled = true;
         Counter()
         Score()
         // Confetti
         createFirework();
-
         // Toast
         $("#happyToast").addClass("show");
         setTimeout(() => {
             $("#happyToast").removeClass("show");
         }, 4000);
-
         $('#infoModal').modal('hide')
         random.classList.remove("expanded");
-
         $('#title-show').text('Ayo Gass');
         $('#desc-show').text('Ngelakoni Kebecikan Teko Tumindak Cilik');
     });
