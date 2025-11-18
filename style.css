@@ -163,9 +163,6 @@
     color: #CD2C58;
 }
 
-
-
-
 /* ---------------------------------------------------
    CARD HORIZONTAL (STATISTICS STYLE)
 --------------------------------------------------- */
@@ -485,6 +482,84 @@
 /* mengatur tampilan hp */
 @media (max-width:576px) {
     .carousel-fade {
-    margin-top: 6.8vh;
+        margin-top: 6.8vh;
+    }
 }
+
+/* ======================================================
+   ANIMASI SAAT WEBSITE PERTAMA KALI DIBUKA
+====================================================== */
+
+/* Fade-in umum */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* NAVBAR slide turun */
+.navbar-load {
+    transform: translateY(-25px);
+    opacity: 0;
+    animation: navbarSlide 0.9s ease forwards;
+}
+
+@keyframes navbarSlide {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* HERO image fade-in */
+.hero-img {
+    opacity: 0;
+    animation: heroFade 1.8s ease forwards;
+}
+
+@keyframes heroFade {
+    to { opacity: 1; }
+}
+
+/* CIRCLE CARD zoom-in */
+#random {
+    animation: fadeOnly 2s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeOnly {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* STATISTICS card slide-up + fade */
+.stats-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideStats 1s ease forwards;
+}
+
+@keyframes slideStats {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Delay agar muncul satu-persatu */
+#card-section .stats-card { animation-delay: 1.2s; }
+
+.small-card:nth-child(1) { animation-delay: 1.4s; }
+.small-card:nth-child(2) { animation-delay: 1.6s; }
+.small-card:nth-child(3) { animation-delay: 1.8s; }
+
+/* Floating button fade-in terakhir */
+.floating-btn {
+    opacity: 0;
+    animation: fadeIn 2s ease 2.2s forwards;
 }
