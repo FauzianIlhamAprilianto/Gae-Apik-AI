@@ -14,28 +14,34 @@ function all() {
     $("#hasil").empty();
     JSON.parse(localStorage.getItem('history')).forEach(e => {
         $("#hasil").append(`
-            <div class="card border-0 border-start border-3 border-primary col-md-6 history-card done">
-                <div class="status-strip bg-success"></div>
+            <div class="card border-0 border-start border-3 border-primary col-md-6 history-card">
                 <div class="history-content">
-                    <h5 class="mb-1">${GaeApik[e-1].title}</h5>
+                    <div class="history-stats d-flex align-items-center justify-content-between"> 
+                        <h5 class="mb-1 text-start">${GaeApik[e-1].title}</h5> 
+                        <div class="history-status text-success">
+                            <i class="bi bi-check-circle-fill me-1"></i> Done
+                        </div>
+                    </div>
                     <p class="mb-0 text-muted">${GaeApik[e-1].benefit}</p>
-                </div>
-                <div class="history-status text-success">
-                    <i class="bi bi-check-circle-fill me-1"></i> Done
                 </div>
             </div>
         `);
     });
     JSON.parse(localStorage.getItem('historySkip')).forEach(e => {
     $("#hasil").append(`
-        <div class="card border-0 border-start border-3 border-danger col-md-6 history-card skip">
-            <div class="status-strip bg-success"></div>
+        <div class="card border-0 border-start border-3 border-danger col-md-6 history-card">
             <div class="history-content">
-                <h5 class="mb-1">${GaeApik[e-1].title}</h5>
+                <div class="history-stats d-flex align-items-center justify-content-between"> 
+                    <h5 class="mb-1 text-start">${GaeApik[e-1].title}</h5> 
+                    
+                    <div class="d-flex align-items-center">
+                        <div class="history-status text-danger me-3"> <i class="bi bi-x-circle-fill me-1"></i> Skip
+                        </div>
+                        <div class="history-action">
+                            <a href="#" class="btn btn-danger btn-sm">Kerjakan</a> </div>
+                    </div>
+                </div>
                 <p class="mb-0 text-muted">${GaeApik[e-1].benefit}</p>
-            </div>
-            <div class="history-status text-danger">
-                <i class="bi bi-x-circle-fill me-1"></i> Skip
             </div>
         </div>
     `)         
@@ -73,16 +79,17 @@ if(historywesmari){
                 $("#hasil").empty();
                 JSON.parse(localStorage.getItem('history')).forEach(e => {
                 $("#hasil").append(`
-                    <div class="card border-0 border-start border-3 border-primary col-md-6 history-card done">
-                        <div class="status-strip bg-success"></div>
-                        <div class="history-content">
-                            <h5 class="mb-1">${GaeApik[e-1].title}</h5>
-                            <p class="mb-0 text-muted">${GaeApik[e-1].benefit}</p>
+                        <div class="card border-0 border-start border-3 border-primary col-md-6 history-card">
+                            <div class="history-content">
+                                <div class="history-stats d-flex align-items-center justify-content-between"> 
+                                    <h5 class="mb-1 text-start">${GaeApik[e-1].title}</h5> 
+                                    <div class="history-status text-success">
+                                        <i class="bi bi-check-circle-fill me-1"></i> Done
+                                    </div>
+                                </div>
+                                <p class="mb-0 text-muted">${GaeApik[e-1].benefit}</p>
+                            </div>
                         </div>
-                        <div class="history-status text-success">
-                            <i class="bi bi-check-circle-fill me-1"></i> Done
-                        </div>
-                    </div>
                 `)         
                 })
             }
@@ -105,14 +112,18 @@ if(historydiliwati){
                 $("#hasil").empty();
                 JSON.parse(localStorage.getItem('historySkip')).forEach(e => {
                 $("#hasil").append(`
-                    <div class="card border-0 border-start border-3 border-danger col-md-6 history-card skip">
-                        <div class="status-strip bg-success"></div>
+                    <div class="card border-0 border-start border-3 border-danger col-md-6 history-card">
                         <div class="history-content">
-                            <h5 class="mb-1">${GaeApik[e-1].title}</h5>
+                            <div class="history-stats d-flex align-items-center justify-content-between"> 
+                                <h5 class="mb-1 text-start">${GaeApik[e-1].title}</h5> 
+                                <div class="history-status text-danger">
+                                    <i class="bi bi-x-circle-fill me-1"></i> Skip
+                                </div>
+                            </div>
                             <p class="mb-0 text-muted">${GaeApik[e-1].benefit}</p>
                         </div>
-                        <div class="history-status text-danger">
-                            <i class="bi bi-x-circle-fill me-1"></i> Skip
+                        <div class="history-status text-danger m-3">
+                            <a href="#" class="btn btn-danger">Kerjakan</a>
                         </div>
                     </div>
                 `)         
