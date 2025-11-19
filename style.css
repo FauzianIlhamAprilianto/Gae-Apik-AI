@@ -71,8 +71,8 @@
 /* Saat slide masuk */
 .carousel-item-next .slide-img,
 .carousel-item-prev .slide-img {
-    transform: translateX(50px); /* geser masuk dari kanan */
-    opacity: 0.6;
+    transform: translateX(0);
+    opacity: 1;
 }
 
 .carousel-item.active .slide-img {
