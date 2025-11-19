@@ -167,17 +167,13 @@
    CARD HORIZONTAL (STATISTICS STYLE)
 --------------------------------------------------- */
 .stats-card {
-    background-image: linear-gradient(to right ,#F5E0E0, white , #FCFCFC);
+    background-image: linear-gradient(to right ,#F8E5E9, #f4f2f1 , #F8E5E9);
     border-radius: 18px;
     padding: 25px 35px;
     min-height: 120px;
     box-shadow: 0 4px 18px rgba(0,0,0,0.12);
-    transition: all .3s ease;
+    transition: all .5s ease;
     background-size: 200% auto;
-}
-
-.stats-long {
-    background-image: linear-gradient(to right , #D4F1F4, white , #C3EBD8);
 }
 
 /* Hover sedikit naik */
@@ -191,6 +187,27 @@
 .stats-icon {
     font-size: 45px;
     color: #CD2C58;
+}
+
+/* Icon Animation */
+.stats-icon {
+    perspective: 1000px; 
+    display: inline-block; 
+}
+
+/* Transisi Dasar pada Ikon */
+.stats-icon i {
+    transition: transform 0.6s ease-out; 
+    display: inline-block; 
+}
+
+/* Efek 3D Saat Kartu Di-Hover */
+.stats-card:hover .stats-icon i {
+    transform: rotateY(360deg);
+}
+
+.stats-card:hover .stats-icon i {
+    transform: rotateY(360deg) scale(1.1);
 }
 
 /* Angka besar */
@@ -367,10 +384,6 @@
     transform: translateX(-50%) translateY(0);
 }
 
-/* ============================
-   Streak
-============================ */
-
 /* ---------------------------------------------------
    HALAMAN HISTORY
 --------------------------------------------------- */
@@ -495,48 +508,6 @@
 }
 
 /* ======================================================
-   ANIMASI SAAT DIV LINGKARAN KE CARD
-====================================================== */
-
-.btn-close-custom {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 30px;
-    height: 30px;
-    background: #D1D1D6;
-    border: none;
-    border-radius: 50%;
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    
-    opacity: 0;
-    transform: scale(0);
-    transition: all 0.4s ease 0.4s;
-    z-index: 11;
-}
-
-#random.expanded #logo-icon {
-    font-size: 1.5rem; 
-    margin: 0;
-    /* Pindah ke kiri atas (relative to the expanded card) */
-    position: absolute;
-    top: 24px;
-    left: 24px;
-    cursor: default;
-}
-
-#random.expanded .btn-close-custom {
-    opacity: 1;
-    transform: scale(1);
-}
-
-/* ======================================================
    ANIMASI SAAT WEBSITE PERTAMA KALI DIBUKA
 ====================================================== */
 
@@ -590,14 +561,12 @@
 /* STATISTICS card slide-up + fade */
 .stats-card {
     opacity: 0;
-    transform: translateY(20px);
     animation: slideStats 1s ease forwards;
 }
 
 @keyframes slideStats {
     to {
         opacity: 1;
-        transform: translateY(0);
     }
 }
 
