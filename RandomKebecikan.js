@@ -5,6 +5,7 @@ const random = document.getElementById('random')
 const skip = document.getElementById('skip')
 const kerjakan = document.getElementById('kerjakan')
 const lanjutkan = document.getElementById('lanjutkan')
+const closeBtn = document.getElementById('close-btn');
 
 export const GaeApik = [
     { 
@@ -416,14 +417,20 @@ export function randomGaeApik() {
         $('#manfaatModal').text(hasilRandom.benefit);
     }
 
+if(closeBtn){
+    closeBtn.addEventListener('click', () => {   
+        // random.classList.remove("expanded");
+        $('#title-show').text('Ayo Gass');
+        $('#desc-show').text('Ngelakoni Kebecikan Teko Tumindak Cilik');
+    });
+}
+
 if (random) {
     random.addEventListener("click", function () {
-        // Jika sudah expanded → jangan lakukan apa-apa
         if (this.classList.contains("expanded")) {
             return;
         }
         lanjutkan.disabled = false;
-        // Jika belum expanded → jalankan aksi
         randomGaeApik();
         this.classList.add("expanded");
     });
