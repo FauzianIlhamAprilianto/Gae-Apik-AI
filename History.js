@@ -153,7 +153,11 @@ if(document.getElementById("reset-history")){
 // Share History (via Web Share API)
 if(document.getElementById("share-history")){
     document.getElementById("share-history").addEventListener("click", async () => {
-        const text = "Ini history saya dari aplikasi!";
+        const text = `Ini history saya dari aplikasi Gae Apik! 🔥
+        Best Streak : ${bestStreak}
+        Hari ini : ${hariIni}
+        Minggu ini : ${mingguIni}
+        Total : ${total}`;
         try {
             await navigator.share({ text });
         } catch (e) {
