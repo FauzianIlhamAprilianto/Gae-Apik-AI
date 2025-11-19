@@ -47,6 +47,10 @@
     opacity: 0.8;
 }
 
+.pink {
+    color: #CD2C58;
+}
+
 /* ---------------------------------------------------
    HERO IMAGE
 --------------------------------------------------- */
@@ -150,11 +154,30 @@
 
 .btn-skip {
     background: #bbb;
+    transition: all 0.25s ease;
+    transform: scale(1);
 }
 
 .btn-go {
     background: #CD2C58;
     color: white;
+    transition: all 0.25s ease;
+    transform: scale(1);
+}
+
+.btn-skip:hover,
+.btn-go:hover {
+    transform: scale(1.07);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.btn-skip:hover {
+    background: #a0a0a0;
+}
+
+.btn-go:hover {
+    background: #b8264f;
 }
 
 /* Icon */
@@ -296,37 +319,37 @@
 /* Tombol custom */
 .btn-custom {
     padding: 10px 18px;
-    border-radius: 14px;
-    font-weight: 600;
-    font-size: 15px;
+    border-radius: 10px;
     border: none;
-    cursor: pointer;
-    transition: 0.25s;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    transform: scale(1);
 }
 
-/* Cancel */
+/* Cancel button */
 .btn-cancel {
-    background: #e5e5e5;
-    color: #333;
+    background: #bbb;
+    color: #222;
 }
 
 .btn-cancel:hover {
-    background: #d0d0d0;
+    background: #a4a4a4;
+    transform: scale(1.07);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    cursor: pointer;
 }
 
-/* Yes */
+/* Yes button */
 .btn-yes {
     background: #CD2C58;
     color: white;
 }
 
 .btn-yes:hover {
-    background: #b22045;
-}
-
-/* Footer content spacing */
-.custom-footer-buttons {
-    padding: 0 25px 25px;
+    background: #b8264f;
+    transform: scale(1.07);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
 }
 
 /* ============================
@@ -422,6 +445,21 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+
+/* btn reset & share */
+#reset-history,
+#share-history {
+    border-radius: 10px;
+    padding: 8px 12px;
+    transition: .2s;
+}
+
+#reset-history:hover,
+#share-history:hover {
+    background-color: #ffeff6;
+    color: #e91e63;
+}
+
 /* Tab Buttons */
 .tab-btn {
     padding: 8px 20px;
@@ -506,7 +544,6 @@
         margin-top: 6.8vh;
     }
 }
-
 
 /* ======================================================
    ANIMASI SAAT DIV LINGKARAN KE CARD

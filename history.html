@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History</title>
+    <title>Gae Apik | History</title>
     <link rel="icon" type="image/svg+xml" href="img/stars.svg">
 
     <!-- Font Awesome -->
@@ -30,14 +30,14 @@
 
             <!-- Logo + Title (mepet kiri) -->
             <a class="navbar-brand d-flex align-items-center brand-hover ms-3" href="index.html">
-                <i class="bi bi-stars fs-5 me-2"></i>
+                <i class="bi bi-stars fs-5 me-2 pink"></i>
                 <span class="fw-bold fs-5">Gae Apik</span>
             </a>
 
             <!-- History Link (mepet kanan) -->
             <div class="ms-auto me-4">
                 <a href="history.html" class="nav-link history-link">
-                <i class="bi bi-clock-history"></i>   History</a>
+                <i class="bi bi-clock-history pink"></i>&nbsp;History</a>
             </div>
 
         </div>
@@ -45,17 +45,37 @@
 
     <!-- PAGE HEADER -->
     <div class="container my-5 pt-5">
-        <div class="d-flex align-items-center mb-3">
-            <!-- Back arrow -->
-            <a href="index.html" class="btn btn-light d-flex align-items-center me-3">
-                <i class="bi bi-arrow-left"></i> Balek
-            </a>
-            <!-- Title -->
-            <h1 class="fw-bold mb-0"><i class="bi bi-clock-history"></i>     History</h1>
+        <div class="d-flex align-items-center justify-content-between mb-3">
+            <!-- Left side: Back button + Title -->
+            <div class="d-flex align-items-center">
+                <!-- Back arrow -->
+                <a href="index.html" class="btn btn-light d-flex align-items-center me-3">
+                    <i class="bi bi-arrow-left"></i>
+                </a>
+
+                <!-- Title -->
+                <h1 class="fw-bold mb-0">
+                    <i class="bi bi-clock-history pink"></i>&nbsp;History
+                </h1>
+            </div>
+
+            <!-- Right side: Reset & Share buttons -->
+            <div class="d-flex align-items-center gap-2">
+                <!-- Reset -->
+                <button id="reset-history" class="btn btn-light" title="Reset kebaikanmu?">
+                    <i class="bi bi-arrow-counterclockwise"></i>
+                </button>
+
+                <!-- Share -->
+                <button id="share-history" class="btn btn-light" title="Share kebaikanmu!">
+                    <i class="bi bi-share"></i>
+                </button>
+            </div>
         </div>
+
         <!-- Deskripsi -->
         <p class="text-muted mb-5">
-            Halaman iki nampilno data lan statistik histori sing ana kaitane karo web iki.
+            Halaman iki nampilno statistik data kebaikanmu selama iki.
         </p>
 
         <!-- STATISTICS CARD HORIZONTAL -->
@@ -73,7 +93,7 @@
 
                 </div>
                 <div id="labelStreak2" class="labelStreak stats-desc text-end">
-                    Lakoni sak kebecikan dina iki ben streak-mu mulai!
+                    Kerjakno minimal 1 kebaikan bendino cek streak-mu nambah!
                 </div>
 
             </div>
@@ -94,14 +114,14 @@
                             </div>
 
                             <div>
-                                <h6 class="mb-0 fw-bold">Kebecikan</h6>
+                                <h6 class="mb-0 fw-bold">Kebaikan</h6>
                                 <div class="hari-number stats-number">0</div>
                             </div>
                         </div>
 
                         <!-- KANAN -->
                         <div class="stats-desc text-end">
-                            Kebecikan Dino iki
+                            Kebaikanmu dino iki
                         </div>
                     </div>
                 </div>
@@ -117,14 +137,14 @@
                             </div>
 
                             <div>
-                                <h6 class="mb-0 fw-bold">Kebecikan</h6>
+                                <h6 class="mb-0 fw-bold">Kebaikan</h6>
                                 <div class="minggu-number stats-number">0</div>
                             </div>
                         </div>
 
                         <!-- KANAN -->
                         <div class="stats-desc text-end">
-                            Kebecikan Minggu iki
+                            Kebaikanmu minggu iki
                         </div>
                     </div>
                 </div>
@@ -140,14 +160,14 @@
                             </div>
 
                             <div>
-                                <h6 class="mb-0 fw-bold">Kebecikan</h6>
+                                <h6 class="mb-0 fw-bold">Kebaikan</h6>
                                 <div class="total-number stats-number">0</div>
                             </div>
                         </div>
 
                         <!-- KANAN -->
                         <div class="stats-desc text-end">
-                            Total Kebecikan
+                            Total kebaikan
                         </div>
                     </div>
                 </div>
@@ -162,9 +182,9 @@
 
         <!-- Title & Deskripsi -->
         <div class="mb-4">
-            <h2 class="fw-bold">Activity History</h2>
+            <h2 class="fw-bold">History Kebaikanmu</h2>
             <p class="text-muted">
-                Iki dhaptar kegiyatan sing wes dilakoni, lengkap karo statusé.
+                Iki daftar kebaikan seng wes dilakoni, lengkap sak status e.
             </p>
         </div>
 
@@ -178,8 +198,8 @@
         <!-- History Cards -->
         <div id="hasil" class="row history-cards g-4">
             <p id="emptyMessage" class="text-center text-muted mt-5">
-                Durung ana isiné<br>
-                Wiwièn ngéspin kanggo miwiti lelampahan kebaikanmu!
+                Durung ono isine<br>
+                Ayo ndang lakonono kebaikanmu!
             </p>
         </div>
     </div>

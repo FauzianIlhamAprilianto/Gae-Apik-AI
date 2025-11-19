@@ -417,22 +417,21 @@ export function randomGaeApik() {
         $('#manfaatModal').text(hasilRandom.benefit);
     }
 
-if(closeBtn){
-    closeBtn.addEventListener('click', () => {   
-        // random.classList.remove("expanded");
-        $('#title-show').text('Ayo Gass');
-        $('#desc-show').text('Ngelakoni Kebecikan Teko Tumindak Cilik');
-    });
-}
-
 if (random) {
     random.addEventListener("click", function () {
         if (this.classList.contains("expanded")) {
             return;
+        } else {
+            lanjutkan.disabled = false;
+            randomGaeApik();
+            this.classList.add("expanded");
         }
-        lanjutkan.disabled = false;
-        randomGaeApik();
-        this.classList.add("expanded");
+
+        if (this.classList.contains("expanded")) {
+            $('#close-btn').prop('hidden', false);
+        } else {
+            $('#close-btn').prop('hidden', true);
+        }
     });
 }
 
@@ -443,13 +442,24 @@ if (skip) {
             historySkip.push(hasilRandomId)
             localStorage.setItem('historySkip', JSON.stringify(historySkip))
         }
-        randomGaeApik()
+        randomGaeApik();
     });
 }
 
 if(kerjakan){
     kerjakan.addEventListener("click", function () {
         $('#infoModal').modal('show')
+    });
+}
+
+if(closeBtn){
+    closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        lanjutkan.disabled = true;
+        random.classList.remove("expanded");
+        $('#close-btn').prop('hidden', true);
+        $('#title-show').text('Ayo Gass');
+        $('#desc-show').text('Ngelakoni Kebecikan Teko Tumindak Cilik');
     });
 }
 
@@ -472,6 +482,7 @@ if(lanjutkan){
         }, 4000);
         $('#infoModal').modal('hide')
         random.classList.remove("expanded");
+        $('#close-btn').prop('hidden', true);
         $('#title-show').text('Ayo Gass');
         $('#desc-show').text('Ngelakoni Kebecikan Teko Tumindak Cilik');
     });

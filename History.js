@@ -129,3 +129,24 @@ if(historydiliwati){
         }
     }
 }
+
+// Reset History
+if(document.getElementById("reset-history")){
+    document.getElementById("reset-history").addEventListener("click", () => {
+        localStorage.clear();
+        location.reload();
+    });
+}
+
+// Share History (via Web Share API)
+if(document.getElementById("share-history")){
+    document.getElementById("share-history").addEventListener("click", async () => {
+        const text = "Ini history saya dari aplikasi!";
+        try {
+            await navigator.share({ text });
+        } catch (e) {
+            alert("Browser tidak mendukung fitur share!");
+        }
+    });
+}
+
