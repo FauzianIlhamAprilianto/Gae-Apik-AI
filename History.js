@@ -116,14 +116,15 @@ if(historydiliwati){
                         <div class="history-content">
                             <div class="history-stats d-flex align-items-center justify-content-between"> 
                                 <h5 class="mb-1 text-start">${GaeApik[e-1].title}</h5> 
-                                <div class="history-status text-danger">
-                                    <i class="bi bi-x-circle-fill me-1"></i> Skip
+                                
+                                <div class="d-flex align-items-center">
+                                    <div class="history-status text-danger me-3"> <i class="bi bi-x-circle-fill me-1"></i> Skip
+                                    </div>
+                                    <div class="history-action">
+                                        <a href="#" class="btn btn-danger btn-sm">Kerjakan</a> </div>
                                 </div>
                             </div>
                             <p class="mb-0 text-muted">${GaeApik[e-1].benefit}</p>
-                        </div>
-                        <div class="history-status text-danger m-3">
-                            <a href="#" class="btn btn-danger">Kerjakan</a>
                         </div>
                     </div>
                 `)         

@@ -27,6 +27,7 @@ export function Counter(){
         }
         localStorage.setItem('streakHariIni', 1)
         localStorage.setItem('terakhir', hari)
+        localStorage.setItem('labelstreak', 1)
     }
     if(localStorage.getItem('historyHarian') == null){
         localStorage.setItem('historyHarian', "[]")
@@ -39,6 +40,11 @@ export function Counter(){
     localStorage.setItem('historyHarian' ,JSON.stringify(historyHarian))
 }
 
+// Label Streak
+if(localStorage.getItem('labelstreak') == null){
+    localStorage.setItem('labelstreak', 0)
+}
+
 // Reset harian
 if(localStorage.getItem('resetHarian') == null){
     localStorage.setItem('resetHarian', hari)
@@ -46,6 +52,7 @@ if(localStorage.getItem('resetHarian') == null){
 else if(localStorage.getItem('resetHarian') != hari){
     localStorage.setItem('harian', 0)
     localStorage.setItem('resetHarian', hari)
+    localStorage.setItem('labelstreak', 0)
     localStorage.setItem('streakHariIni', 0)
 }
 
@@ -64,8 +71,11 @@ if(hari >= parseInt(localStorage.getItem('terakhir')) + 2 ){
 
 // Tampilkan ke UI
 export function Score(){
+    if(localStorage.getItem('streak')){
+        $('.streak-number').text(localStorage.getItem('streak'))
+    }
     if(localStorage.getItem('bestStreak') > 0){
-    $('.streak-number').text(localStorage.getItem('bestStreak'))
+        $('#ShowBestStreak').text(localStorage.getItem('bestStreak'))
     }
     if(localStorage.getItem('harian') > 0){
         $('.hari-number').text(localStorage.getItem('harian'))
@@ -75,6 +85,14 @@ export function Score(){
     }
     if(localStorage.getItem('total') > 0){
         $('.total-number').text(localStorage.getItem('total'))
+    }
+    if(localStorage.getItem('labelstreak') == 1){
+        $('#labelStreak1').text('Awalan sing apik! Terusno maneh mene yo.')
+        $('#labelStreak2').text('Awalan sing apik! Terusno maneh mene yo.')
+        $('.streak-number').classList.remove('streak-mati')
+        $('.streak-icon').classList.remove('streak-mati')
+        $('.streak-number').classList.add('streak-oranye')
+        $('.streak-icon').classList.add('streak-oranye')
     }
 } 
 
