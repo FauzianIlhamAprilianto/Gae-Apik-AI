@@ -154,10 +154,10 @@ if(document.getElementById("reset-history")){
 if(document.getElementById("share-history")){
     document.getElementById("share-history").addEventListener("click", async () => {
         const text = `Ini history saya dari aplikasi Gae Apik! 🔥
-        Best Streak : ${bestStreak}
-        Hari ini : ${hariIni}
-        Minggu ini : ${mingguIni}
-        Total : ${total}`;
+Best Streak: ${localStorage.getItem('bestStreak')}
+Hari ini: ${localStorage.getItem('harian')}
+Minggu ini: ${localStorage.getItem('mingguan')}
+Total: ${localStorage.getItem('total')}`;
         try {
             await navigator.share({ text });
         } catch (e) {
