@@ -2,8 +2,8 @@ import { Counter , Score } from './Counter.js'
 export let hasilRandomId = null;
 
 const random = document.getElementById('random')
-const kerjakan = document.getElementById('kerjakan')
 const skip = document.getElementById('skip')
+const kerjakan = document.getElementById('kerjakan')
 const lanjutkan = document.getElementById('lanjutkan')
 
 export const GaeApik = [
@@ -359,6 +359,8 @@ export const GaeApik = [
     }
 ];
 
+
+// Random Biasa 
 // export function randomGaeApik(){
 //     let hasilRandom = GaeApik[Math.floor(Math.random() * GaeApik.length)]
 //     hasilRandomId = hasilRandom.id
@@ -369,8 +371,9 @@ export const GaeApik = [
 //     $('#descModal').text(hasilRandom.description);
 //     $('#caraModal').text(hasilRandom.how);
 //     $('#manfaatModal').text(hasilRandom.benefit);
-// }
+// } 
 
+// Random Unik
 export function randomGaeApik() {
         const totalElements = GaeApik.length;
         const historyJSON = localStorage.getItem('historyHarian');
@@ -426,6 +429,17 @@ if (random) {
     });
 }
 
+if (skip) {
+    skip.addEventListener("click", function () {
+        if (!JSON.parse(localStorage.getItem('historySkip')).includes(hasilRandomId)) {
+            let historySkip = JSON.parse(localStorage.getItem('historySkip'))
+            historySkip.push(hasilRandomId)
+            localStorage.setItem('historySkip', JSON.stringify(historySkip))
+        }
+        randomGaeApik()
+    });
+}
+
 if(kerjakan){
     kerjakan.addEventListener("click", function () {
         $('#infoModal').modal('show')
@@ -437,6 +451,11 @@ if(lanjutkan){
         this.disabled = true;
         Counter()
         Score()
+        if (JSON.parse(localStorage.getItem('historySkip')).includes(hasilRandomId)) {
+            let historySkipHapus = JSON.parse(localStorage.getItem('historySkip'))
+            historySkipHapus = historySkipHapus.filter(item => item !== hasilRandomId)
+            localStorage.setItem('historySkip', JSON.stringify(historySkipHapus))
+        }
         // Confetti
         createFirework();
         // Toast

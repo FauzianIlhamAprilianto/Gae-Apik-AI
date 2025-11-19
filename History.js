@@ -1,6 +1,5 @@
-import { hasilRandomId , randomGaeApik , GaeApik} from "./RandomKebecikan.js"
+import {GaeApik} from "./RandomKebecikan.js"
 
-const skip = document.getElementById('skip')
 const historywesmari = document.getElementById('HistoryWesmari')
 const historydiliwati = document.getElementById('HistoryDiliwati')
 const historyAll = document.getElementById('All')
@@ -8,16 +7,6 @@ const historyAll = document.getElementById('All')
 // Tambah Histrory skip
 if(localStorage.getItem('historySkip') == null){
     localStorage.setItem('historySkip', "[]")
-}
-
-
-if (skip) {
-    skip.addEventListener("click", function () {
-        let historySkip = JSON.parse(localStorage.getItem('historySkip'))
-        historySkip.push(hasilRandomId)
-        localStorage.setItem('historySkip', JSON.stringify(historySkip))
-        randomGaeApik()
-    });
 }
 
 // History Kabeh
@@ -52,6 +41,10 @@ function all() {
     `)         
     })
 };
+
+if(localStorage.getItem('history') == null){
+    localStorage.setItem('history', '[]')
+}
 
 const historyJSON = JSON.parse(localStorage.getItem('history') ?? '[]');
 const historySkipJSON = JSON.parse(localStorage.getItem('historySkip') ?? '[]');
