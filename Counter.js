@@ -69,6 +69,11 @@ if(hari >= parseInt(localStorage.getItem('terakhir')) + 2 ){
     localStorage.setItem('streak', 0)
 }
 
+const streakNumber1 = document.getElementById('streak-number1')
+const streakIcon1 = document.getElementById('streak-icon1') 
+const streakNumber2 = document.getElementById('streak-number2') 
+const streakIcon2 = document.getElementById('streak-icon2') 
+
 // Tampilkan ke UI
 export function Score(){
     if(localStorage.getItem('streak')){
@@ -89,10 +94,34 @@ export function Score(){
     if(localStorage.getItem('labelstreak') == 1){
         $('#labelStreak1').text('Awalan sing apik! Terusno maneh mene yo.')
         $('#labelStreak2').text('Awalan sing apik! Terusno maneh mene yo.')
-        $('.streak-number').classList.remove('streak-mati')
-        $('.streak-icon').classList.remove('streak-mati')
-        $('.streak-number').classList.add('streak-oranye')
-        $('.streak-icon').classList.add('streak-oranye')
+        if(localStorage.getItem('streak') >= 30){
+            if(streakNumber1){
+                streakNumber1.classList.remove('streak-mati')
+                streakIcon1.classList.remove('streak-mati')
+                streakNumber1.classList.add('streak-ungu')
+                streakIcon1.classList.add('streak-ungu')
+            }
+            if(streakNumber2){
+                streakNumber2.classList.remove('streak-mati')
+                streakIcon2.classList.remove('streak-mati')
+                streakNumber2.classList.add('streak-ungu')
+                streakIcon2.classList.add('streak-ungu')
+            }
+        }
+        else{
+            if(streakNumber1){
+                streakNumber1.classList.remove('streak-mati')
+                streakIcon1.classList.remove('streak-mati')
+                streakNumber1.classList.add('streak-oranye')
+                streakIcon1.classList.add('streak-oranye')
+            }
+            if(streakNumber2){
+                streakNumber2.classList.remove('streak-mati')
+                streakIcon2.classList.remove('streak-mati')
+                streakNumber2.classList.add('streak-oranye')
+                streakIcon2.classList.add('streak-oranye')
+            }
+        }
     }
 } 
 
