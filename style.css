@@ -313,6 +313,27 @@
     }
 }
 
+/* Animasi Text */
+.text-zoom {
+  display: inline-block;
+  transform: scale(0);
+  animation: zoomIn 0.8s ease-out forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1);
+    opacity: .7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 /* ---------------------------------------------------
    Modal
 --------------------------------------------------- */
@@ -365,6 +386,47 @@
     transform: scale(1.07);
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     cursor: pointer;
+}
+
+/*  Moal Animation */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+}
+
+/* Modal */
+.modal-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(.8);
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 350px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity .35s ease,
+    transform .35s ease;
+}
+
+/* Saat modal tampil */
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
 }
 
 /* ============================
