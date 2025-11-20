@@ -22,7 +22,7 @@ export function Counter(){
     if(localStorage.getItem('streakHariIni') == 0){
         let countStreak = parseInt(localStorage.getItem('streak') || 0)
         localStorage.setItem('streak', (countStreak + 1).toString())
-        if(localStorage.getItem('bestStreak') < localStorage.getItem('streak')){
+        if(parseInt(localStorage.getItem('bestStreak')) < parseInt(localStorage.getItem('streak'))){
             localStorage.setItem('bestStreak', localStorage.getItem('streak'))
         }
         localStorage.setItem('streakHariIni', 1)
