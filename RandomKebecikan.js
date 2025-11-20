@@ -455,13 +455,19 @@ if (random) {
 
 if (skip) {
     skip.addEventListener("click", function () {
-        if (!JSON.parse(localStorage.getItem('historySkip')).includes(hasilRandomId)) {
-            let historySkip = JSON.parse(localStorage.getItem('historySkip'))
-            historySkip.push(hasilRandomId)
-            localStorage.setItem('historySkip', JSON.stringify(historySkip))
-        }
-        randomGaeApik();
-    });
+    // Ambil historySkip dari localStorage, kalau belum ada buat array kosong
+    let historySkip = JSON.parse(localStorage.getItem('historySkip')) || [];
+
+    // Cek apakah hasilRandomId sudah ada, kalau belum push
+    if (!historySkip.includes(hasilRandomId)) {
+        historySkip.push(hasilRandomId);
+        localStorage.setItem('historySkip', JSON.stringify(historySkip));
+    }
+
+    // Panggil fungsi random selanjutnya
+    randomGaeApik();
+});
+
 }
 
 if(kerjakan){
