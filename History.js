@@ -11,9 +11,9 @@ if(localStorage.getItem('historySkip') == null){
 
 // History Kabeh
 function all() {
-    $("#hasil").empty();
+    $(".hasil").empty();
     JSON.parse(localStorage.getItem('history')).forEach(e => {
-        $("#hasil").append(`
+        $(".hasil").append(`
             <div class="card border-0 border-start border-3 border-primary col-md-6 history-card">
                 <div class="history-content">
                     <div class="history-stats d-flex align-items-center justify-content-between"> 
@@ -28,7 +28,7 @@ function all() {
         `);
     });
     JSON.parse(localStorage.getItem('historySkip')).forEach(e => {
-    $("#hasil").append(`
+    $(".hasil").append(`
         <div class="card border-0 border-start border-3 border-danger col-md-6 history-card">
             <div class="history-content">
                 <div class="history-stats d-flex align-items-center justify-content-between"> 
@@ -60,8 +60,8 @@ if(historyJSON.length > 0 || historySkipJSON.length > 0){
     }
 }
 else{
-    $("#hasil").empty();
-    $("#hasil").append(`
+    $(".hasil").empty();
+    $(".hasil").append(`
         <p id="emptyMessage" class="text-center text-muted mt-5">
             Durung ana isiné<br>
             Wiwièn ngéspin kanggo miwiti lelampahan kebaikanmu!
@@ -73,9 +73,9 @@ else{
 if(historywesmari){
     historywesmari.onclick = () => {
         if(historyJSON.length > 0){
-                $("#hasil").empty();
+                $(".hasil").empty();
                 JSON.parse(localStorage.getItem('history')).forEach(e => {
-                $("#hasil").append(`
+                $(".hasil").append(`
                         <div class="card border-0 border-start border-3 border-primary col-md-6 history-card">
                             <div class="history-content">
                                 <div class="history-stats d-flex align-items-center justify-content-between"> 
@@ -91,8 +91,8 @@ if(historywesmari){
                 })
             }
         else{
-            $("#hasil").empty();
-            $("#hasil").append(`
+            $(".hasil").empty();
+            $(".hasil").append(`
                 <p id="emptyMessage" class="text-center text-muted mt-5">
                     Durung ana isiné<br>
                     Wiwièn ngéspin kanggo miwiti lelampahan kebaikanmu!
@@ -106,9 +106,9 @@ if(historywesmari){
 if(historydiliwati){
     historydiliwati.onclick = () => {
         if(historySkipJSON.length > 0){
-                $("#hasil").empty();
+                $(".hasil").empty();
                 JSON.parse(localStorage.getItem('historySkip')).forEach(e => {
-                $("#hasil").append(`
+                $(".hasil").append(`
                     <div class="card border-0 border-start border-3 border-danger col-md-6 history-card">
                         <div class="history-content">
                             <div class="history-stats d-flex align-items-center justify-content-between"> 
@@ -125,8 +125,8 @@ if(historydiliwati){
                 })
         }
         else{
-            $("#hasil").empty();
-            $("#hasil").append(`
+            $(".hasil").empty();
+            $(".hasil").append(`
                 <p id="emptyMessage" class="text-center text-muted mt-5">
                     Durung ana isiné<br>
                     Wiwièn ngéspin kanggo miwiti lelampahan kebaikanmu!
