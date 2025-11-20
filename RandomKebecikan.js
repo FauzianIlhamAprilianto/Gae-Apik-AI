@@ -316,7 +316,6 @@ export const GaeApik = [
         how: "Gambar doodle nang kertas kosong, buku, utawa catetan HP. Gambar kucing, awan, tulisan lucu, utawa bentuk aneh sak kepenginanmu.", 
         benefit: "Doodle bantu ngilangno rasa bosan, stres, lan mumet kepala. awakmu iso ngrasakke fun cilik sing marai ati seneng. Kreativitasmu yo iso berkembang tanpa tekanan.", 
     },
-    ,
     { 
         id: 45, 
         title: "Ngatur playlist olahraga", 
