@@ -410,6 +410,13 @@ export function randomGaeApik() {
         let hasilRandom = GaeApik[chosenIndex]
         hasilRandomId = hasilRandom.id
 
+        $('#title-show').removeClass('text-zoom')
+        $('#desc-show').removeClass('text-zoom')
+        // force reflow
+        void $('#title-show')[0].offsetWidth;
+        void $('#desc-show')[0].offsetWidth;
+        $('#title-show').addClass('text-zoom')
+        $('#desc-show').addClass('text-zoom')
         $('#title-show').text(hasilRandom.title);
         $('#desc-show').text(hasilRandom.description);
         $('#titleModal').text(hasilRandom.title);
