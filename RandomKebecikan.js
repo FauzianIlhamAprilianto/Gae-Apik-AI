@@ -391,7 +391,7 @@ export function randomGaeApik() {
         }
         
         // Cek apakah semua sudah terambil
-        if (usedIndicesBase0.length >= totalElements) {
+        if (usedIndicesBase0.length > totalElements - 2) {
             console.warn("Semua item sudah terpilih. Silakan reset riwayat untuk memulai kembali.");
             return null;
         }
@@ -424,8 +424,18 @@ if (random) {
             return;
         } else {
             lanjutkan.disabled = false;
-            randomGaeApik();
-            this.classList.add("expanded");
+            let validFull = randomGaeApik()
+            if(validFull === null){
+                // Confetti
+                createFirework();
+                // Toast
+                $("#fullToast").addClass("show");
+                setTimeout(() => {
+                    $("#fullToast").removeClass("show");
+                }, 4000);
+            }else{
+                this.classList.add("expanded");
+            }
         }
 
         if (this.classList.contains("expanded")) {
@@ -469,6 +479,7 @@ if(lanjutkan){
         this.disabled = true;
         Counter()
         Score()
+        // Hapus Skip
         if (JSON.parse(localStorage.getItem('historySkip')).includes(hasilRandomId)) {
             let historySkipHapus = JSON.parse(localStorage.getItem('historySkip'))
             historySkipHapus = historySkipHapus.filter(item => item !== hasilRandomId)
