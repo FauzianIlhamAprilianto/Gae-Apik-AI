@@ -390,7 +390,7 @@ export function randomGaeApik() {
         }
         
         // Cek apakah semua sudah terambil
-        if (usedIndicesBase0.length > totalElements - 2) {
+        if (usedIndicesBase0.length > totalElements - 1) {
             console.warn("Semua item sudah terpilih. Silakan reset riwayat untuk memulai kembali.");
             return null;
         }
