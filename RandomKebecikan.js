@@ -175,7 +175,6 @@ export const GaeApik = [
   how: "Ucapkan Terima Kasih pada guru, penjaga, teman yang meminjamkan pensil, hingga petugas kantin.",
   benefit: "Melatih rasa syukur, meningkatkan kesadaran sosial, dan menyebarkan kebaikan lewat kata-kata."
 },
-//sampe sini
 {
   id: 25,
   title: "Berbagi Makanan dengan Teman",
@@ -185,10 +184,10 @@ export const GaeApik = [
 },
 {
   id: 26,
-  title: "Mendengarkan Guru dengan Aktif",
-  description: "Tidak hanya mendengar, tetapi juga memahami penjelasan guru.",
-  how: "Catat poin penting dan perhatikan contoh yang diberikan.",
-  benefit: "Pemahaman pelajaran menjadi lebih mendalam."
+  title: "Bagikan Stiker Whatsapp",
+  description: "Berikan stiker random ke pada teman yang menghibur",
+  how: "Buka grup peminatan RPL dan bagikan stiker anda",
+  benefit: "Menghibur dan memunculkan gelak tawa teman-teman."
 },
 {
   id: 27,
@@ -199,10 +198,10 @@ export const GaeApik = [
 },
 {
   id: 28,
-  title: "Menepati Tanggung Jawab Kelompok",
-  description: "Melaksanakan tugas kelompok sesuai pembagian.",
-  how: "Kerjakan bagian tugas tepat waktu dan komunikasikan jika ada kendala.",
-  benefit: "Kerja sama kelompok menjadi lebih solid."
+  title: "Gunakan Inggris selama 10 menit",
+  description: "Tantangan untuk berkomunikasi dengan teman menggunakan bahasa Inggris (sebisa mungkin) 10 menit di Kelas.",
+  how: "Siapkan kosakata sehari-hari, jangan takut salah. Ajak teman untuk ikut tantangan.",
+  benefit: "Meningkatkan percaya diri dan kemampuan bahasa Inggris secara praktis."
 },
 {
   id: 29,
@@ -227,17 +226,17 @@ export const GaeApik = [
 },
 {
   id: 32,
-  title: "Memberikan Ide saat Diskusi",
-  description: "Ikut berpartisipasi aktif dalam diskusi kelompok.",
-  how: "Sampaikan ide dengan bahasa yang sopan dan jelas.",
-  benefit: "Diskusi menjadi lebih hidup dan produktif."
+  title: "Putar Video Inspiratif Singkat",
+  description: "Memutar video inspiratif atau edukatif yang relevan dengan pelajaran",
+  how: "Bukan Youtube dan simak video tersebut hingga selesai",
+  benefit: "Memperluas wawasan"
 },
 {
   id: 33,
-  title: "Menghargai Pendapat yang Berbeda",
-  description: "Tidak meremehkan pendapat teman yang berbeda pandangan.",
-  how: "Dengarkan terlebih dahulu sebelum menanggapi.",
-  benefit: "Meningkatkan sikap toleransi."
+  title: "Berikan Pantun",
+  description: "Membuat dan membacakan pantun singkat di depan kelas untuk mencairkan suasana, menyemangati, atau memperkenalkan sebuah topik pelajaran.",
+  how: "Buat pantun 4 baris (2 baris sampiran, 2 baris isi) yang relevan dengan situasi kelas atau materi pelajaran.",
+  benefit: "Melatih kreativitas dalam berbahasa dan berpikir cepat, memperkaya kosa kata, mencairkan suasana kelas yang tegang, serta membuat pembelajaran sastra menjadi lebih hidup dan menyenangkan."
 },
 {
   id: 34,
@@ -248,17 +247,17 @@ export const GaeApik = [
 },
 {
   id: 35,
-  title: "Berani Membaca di Depan Kelas",
-  description: "Mau membaca teks atau jawaban saat diminta.",
-  how: "Tarik napas dan baca dengan suara jelas.",
-  benefit: "Melatih keberanian dan kepercayaan diri."
+  title: "Sebutkan semua nama anak RPL",
+  description: "Tantangan untuk bisa menyebutkan nama semua orang di kelas, termasuk yang jarang berinteraksi.",
+  how: "Berdiri dan sebutkan semua nama anak di kelas RPL, jika tidak kenal maka hampiri dia dan ajak kenalan",
+  benefit: "Membuat setiap orang merasa diakui dan dihargai keberadaannya."
 },
 {
   id: 36,
-  title: "Tidak Mengganggu Teman Belajar",
-  description: "Menghormati teman yang sedang fokus belajar.",
-  how: "Hindari bercanda atau mengajak bicara saat pelajaran.",
-  benefit: "Teman bisa belajar dengan nyaman."
+  title: "Tulis Kata Motivasi di Papan",
+  description: "Menuliskan kata-kata motivasi atau quote inspiratif di sudut papan tulis sebelum pelajaran dimulai.",
+  how: "Maju ke depan, tulis kata kata motivasi dengan rapi di papan.",
+  benefit: "Menyemangati seluruh kelas, termasuk guru, dan menciptakan pikiran positif."
 },
 {
   id: 37,
@@ -269,94 +268,31 @@ export const GaeApik = [
 },
 {
   id: 38,
-  title: "Masuk Kelas Tepat Waktu",
-  description: "Datang ke kelas sesuai jadwal tanpa terlambat.",
-  how: "Bersiap sebelum bel berbunyi.",
-  benefit: "Tidak ketinggalan materi pelajaran."
+  title: "Bertanya Minimal 1 Kali",
+  description: "Tantang diri untuk mengajukan pertanyaan, pendapat, atau saran tentang aplikasi ini.",
+  how: "Ajukan pertanyaan, pendapat, atau saran tentang aplikasi ini.",
+  benefit: "Mendorong rasa ingin tahu, aktif dalam pembelajaran, dan membantu teman yang untuk mengembangkan aplikasi."
 },
 {
   id: 39,
-  title: "Mematuhi Aturan Kelas",
-  description: "Menjalankan aturan yang telah disepakati bersama.",
-  how: "Ingat dan patuhi aturan setiap hari.",
-  benefit: "Kelas menjadi lebih tertib dan adil."
-},
-{
-  id: 40,
-  title: "Berani Menjadi Relawan",
-  description: "Mau membantu atau maju saat dibutuhkan.",
-  how: "Angkat tangan dan lakukan dengan sungguh-sungguh.",
-  benefit: "Melatih tanggung jawab dan keberanian."
-},
-{
-  id: 41,
-  title: "Menjaga Barang Pribadi",
-  description: "Tidak sembarangan meletakkan barang pribadi.",
-  how: "Simpan barang di tas atau tempat aman.",
-  benefit: "Mengurangi kehilangan dan kekacauan."
-},
-{
-  id: 42,
-  title: "Menyambut Teman Baru",
-  description: "Membantu teman baru merasa diterima di kelas.",
-  how: "Ajak berbicara dan tunjukkan lingkungan kelas.",
-  benefit: "Teman baru merasa nyaman dan percaya diri."
-},
-{
-  id: 43,
-  title: "Tidak Mengeluh Berlebihan",
-  description: "Menghadapi tugas dengan sikap positif.",
-  how: "Kerjakan tugas sedikit demi sedikit.",
-  benefit: "Mental lebih kuat dan tidak mudah menyerah."
-},
-{
-  id: 44,
-  title: "Berbagi Tempat Duduk",
-  description: "Memberi ruang kepada teman yang membutuhkan.",
-  how: "Geser kursi atau berbagi tempat dengan sukarela.",
-  benefit: "Kelas terasa lebih nyaman."
-},
-{
-  id: 45,
   title: "Menggunakan Bahasa yang Sopan",
   description: "Menjaga kata-kata agar tidak menyakiti orang lain.",
   how: "Biasakan berbicara dengan nada baik.",
   benefit: "Lingkungan kelas lebih positif."
 },
 {
-  id: 46,
-  title: "Mengakui Saat Belum Paham",
-  description: "Jujur jika belum mengerti materi pelajaran.",
-  how: "Bertanya kepada guru atau teman.",
-  benefit: "Pemahaman meningkat dan tidak tertinggal."
+  id: 40,
+  title: "Menulis dengan Tangan Kiri",
+  description: "Tantangan untuk menulis 3 kalimat tentang materi sekolah dengan tangan kanan kanan",
+  how: "Siapkan buku dan pulpen. Bersabarlah dengan tulisan yang mungkin berantakan. Fokus pada isi, bukan kerapian.",
+  benefit: "Melatih otak sisi yang lain, meningkatkan koordinasi motorik halus, dan memberikan pengalaman yang lucu dan menantang."
 },
 {
-  id: 47,
-  title: "Menghargai Waktu Teman",
-  description: "Tidak menunda pekerjaan yang melibatkan orang lain.",
-  how: "Selesaikan tugas sesuai kesepakatan.",
-  benefit: "Kerja sama menjadi lebih baik."
-},
-{
-  id: 48,
-  title: "Menjaga Kerapian Seragam",
-  description: "Memakai seragam dengan rapi dan bersih.",
-  how: "Rapikan baju sebelum pelajaran dimulai.",
-  benefit: "Menunjukkan kesiapan dan kedisiplinan."
-},
-{
-  id: 49,
-  title: "Menjadi Contoh yang Baik",
-  description: "Menunjukkan perilaku positif agar bisa ditiru.",
-  how: "Mulai dari hal kecil dan konsisten.",
-  benefit: "Menginspirasi teman lain."
-},
-{
-  id: 50,
-  title: "Mengevaluasi Sikap Harian",
-  description: "Merenungkan sikap dan perbuatan selama di kelas.",
-  how: "Pikirkan kebaikan apa yang sudah dilakukan hari ini.",
-  benefit: "Membantu menjadi pribadi yang lebih baik setiap hari."
+  id: 41,
+  title: "Push up 10x",
+  description: "Tantangan fisik untuk melakukan 10 kali push up dengan teknik yang benar",
+  how: "Carilah ruang kosong di sisi kelas ,Posisikan tangan selebar bahu, tubuh lurus seperti papan, turunkan badan hingga dada hampir menyentuh lantai, lalu dorong kembali ke posisi awal. Ulangi hingga 10 kali.",
+  benefit: "Meningkatkan aliran darah dan oksigen ke otak sehingga meningkatkan fokus dan kewaspadaan saat belajar, memperkuat otot lengan, bahu, dan inti tubuh, serta memberikan suntikan energi dan semangat untuk menghadapi pelajaran."
 }
 ];
 
