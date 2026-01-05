@@ -1,10 +1,14 @@
-const selesai = document.getElementById('selesai')
 let now = new Date();
 let hari = String(now.getDate()).padStart(2, '0');
-const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-let minggu = days[now.getDay()];
-let lastReset = localStorage.getItem("lastReset");
+let msHari = now.getTime();
+let bulan = now.getMonth();
+// const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+// let minggu = days[now.getDay()];
+// let lastReset = localStorage.getItem("lastReset");
 import { hasilRandomId } from "./RandomKebecikan.js"
+if(localStorage.getItem('mingguReset') == null){
+    localStorage.setItem('mingguReset', 1)
+}
 
 // Tambah counter Kegiatan
 export function Counter(){
@@ -26,12 +30,13 @@ export function Counter(){
             localStorage.setItem('bestStreak', localStorage.getItem('streak'))
         }
         localStorage.setItem('streakHariIni', 1)
-        localStorage.setItem('terakhir', hari)
+        localStorage.setItem('msTerakhir', msHari)
         localStorage.setItem('labelstreak', 1)
     }
     if(localStorage.getItem('historyHarian') == null){
         localStorage.setItem('historyHarian', "[]")
     }
+    localStorage.setItem('bulanTerakhir', bulan)
     let history = JSON.parse(localStorage.getItem('history'))
     let historyHarian = JSON.parse(localStorage.getItem('historyHarian'))
     history.push(hasilRandomId)
@@ -45,7 +50,7 @@ if(localStorage.getItem('labelstreak') == null){
     localStorage.setItem('labelstreak', 0)
 }
 
-// Reset harian
+// Reset Harian
 if(localStorage.getItem('resetHarian') == null){
     localStorage.setItem('resetHarian', hari)
 }
@@ -54,20 +59,32 @@ else if(localStorage.getItem('resetHarian') != hari){
     localStorage.setItem('resetHarian', hari)
     localStorage.setItem('labelstreak', 0)
     localStorage.setItem('streakHariIni', 0)
+    localStorage.setItem('mingguReset', parseInt(localStorage.getItem('mingguReset')) + 1)
 }
 
-const mingguReset = localStorage.getItem('mingguReset')
-if(minggu == 'Mon'){
-    if(mingguReset !== now.toDateString()){
-        localStorage.setItem('mingguan', 0)
-        localStorage.setItem("mingguReset", now.toDateString());
-    }
+// Reset Mingguan
+if(parseInt(localStorage.getItem('mingguReset')) === 7){
+    localStorage.setItem('mingguan', 0)
+    localStorage.setItem('mingguReset', 0)
 }
+//Reset Mingguan Lama
+// const mingguReset = localStorage.getItem('mingguReset')
+// if(minggu == 'Mon'){
+//     if(mingguReset !== now.toDateString()){
+//         localStorage.setItem('mingguan', 0)
+//         localStorage.setItem("mingguReset", now.toDateString());
+//     }
+// }
 
-// Reset Streak
-if(hari >= parseInt(localStorage.getItem('terakhir')) + 2 ){
+// Reset Streak 
+const beda = Math.floor((msHari - parseInt(localStorage.getItem('msTerakhir')))/(24*60*60*1000))
+if(beda >= 2){
     localStorage.setItem('streak', 0)
 }
+// Reset Streak Lama
+// if(hari >= parseInt(localStorage.getItem('terakhir')) + 2){
+//     localStorage.setItem('streak', 0)
+// }
 
 const streakNumber1 = document.getElementById('streak-number1')
 const streakIcon1 = document.getElementById('streak-icon1') 
